@@ -1,7 +1,7 @@
 r"""Wrapper for preprocessed.h
 
 Generated with:
-/opt/hostedtoolcache/Python/3.10.18/x64/bin/ctypesgen /tmp/binding_gen/preprocessed.h -o /home/runner/work/jettison_shared_includes/jettison_shared_includes/output/jon_shared_data_bindings.py -l libc.so.6 --strip-prefix=jon_
+/usr/local/bin/ctypesgen /tmp/binding_gen/preprocessed.h -o /workspace/output/jon_shared_data_bindings.py -l libc.so.6 --strip-prefix=jon_
 
 Do not modify this file.
 """
@@ -917,7 +917,7 @@ ptrdiff_t = c_long# /tmp/binding_gen/preprocessed.h: 24
 
 size_t = c_ulong# /tmp/binding_gen/preprocessed.h: 25
 
-wchar_t = c_int# /tmp/binding_gen/preprocessed.h: 26
+wchar_t = c_uint# /tmp/binding_gen/preprocessed.h: 26
 
 # /tmp/binding_gen/preprocessed.h: 32
 class struct_anon_1(Structure):
@@ -994,7 +994,7 @@ __ino64_t = c_ulong# /tmp/binding_gen/preprocessed.h: 61
 
 __mode_t = c_uint# /tmp/binding_gen/preprocessed.h: 62
 
-__nlink_t = c_ulong# /tmp/binding_gen/preprocessed.h: 63
+__nlink_t = c_uint# /tmp/binding_gen/preprocessed.h: 63
 
 __off_t = c_long# /tmp/binding_gen/preprocessed.h: 64
 
@@ -1039,7 +1039,7 @@ __clockid_t = c_int# /tmp/binding_gen/preprocessed.h: 78
 
 __timer_t = POINTER(None)# /tmp/binding_gen/preprocessed.h: 79
 
-__blksize_t = c_long# /tmp/binding_gen/preprocessed.h: 80
+__blksize_t = c_int# /tmp/binding_gen/preprocessed.h: 80
 
 __blkcnt_t = c_long# /tmp/binding_gen/preprocessed.h: 81
 
@@ -2224,7 +2224,7 @@ if _libs["libc.so.6"].has("strftime", "cdecl"):
     strftime.argtypes = [String, c_size_t, String, POINTER(struct_tm)]
     strftime.restype = c_size_t
 
-# /tmp/binding_gen/preprocessed.h: 596
+# /tmp/binding_gen/preprocessed.h: 595
 if _libs["libc.so.6"].has("strptime", "cdecl"):
     strptime = _libs["libc.so.6"].get("strptime", "cdecl")
     strptime.argtypes = [String, String, POINTER(struct_tm)]
@@ -2234,13 +2234,13 @@ if _libs["libc.so.6"].has("strptime", "cdecl"):
         strptime.restype = String
         strptime.errcheck = ReturnString
 
-# /tmp/binding_gen/preprocessed.h: 599
+# /tmp/binding_gen/preprocessed.h: 598
 if _libs["libc.so.6"].has("strftime_l", "cdecl"):
     strftime_l = _libs["libc.so.6"].get("strftime_l", "cdecl")
     strftime_l.argtypes = [String, c_size_t, String, POINTER(struct_tm), locale_t]
     strftime_l.restype = c_size_t
 
-# /tmp/binding_gen/preprocessed.h: 603
+# /tmp/binding_gen/preprocessed.h: 602
 if _libs["libc.so.6"].has("strptime_l", "cdecl"):
     strptime_l = _libs["libc.so.6"].get("strptime_l", "cdecl")
     strptime_l.argtypes = [String, String, POINTER(struct_tm), locale_t]
@@ -2250,31 +2250,31 @@ if _libs["libc.so.6"].has("strptime_l", "cdecl"):
         strptime_l.restype = String
         strptime_l.errcheck = ReturnString
 
-# /tmp/binding_gen/preprocessed.h: 606
+# /tmp/binding_gen/preprocessed.h: 605
 if _libs["libc.so.6"].has("gmtime", "cdecl"):
     gmtime = _libs["libc.so.6"].get("gmtime", "cdecl")
     gmtime.argtypes = [POINTER(time_t)]
     gmtime.restype = POINTER(struct_tm)
 
-# /tmp/binding_gen/preprocessed.h: 607
+# /tmp/binding_gen/preprocessed.h: 606
 if _libs["libc.so.6"].has("localtime", "cdecl"):
     localtime = _libs["libc.so.6"].get("localtime", "cdecl")
     localtime.argtypes = [POINTER(time_t)]
     localtime.restype = POINTER(struct_tm)
 
-# /tmp/binding_gen/preprocessed.h: 608
+# /tmp/binding_gen/preprocessed.h: 607
 if _libs["libc.so.6"].has("gmtime_r", "cdecl"):
     gmtime_r = _libs["libc.so.6"].get("gmtime_r", "cdecl")
     gmtime_r.argtypes = [POINTER(time_t), POINTER(struct_tm)]
     gmtime_r.restype = POINTER(struct_tm)
 
-# /tmp/binding_gen/preprocessed.h: 610
+# /tmp/binding_gen/preprocessed.h: 609
 if _libs["libc.so.6"].has("localtime_r", "cdecl"):
     localtime_r = _libs["libc.so.6"].get("localtime_r", "cdecl")
     localtime_r.argtypes = [POINTER(time_t), POINTER(struct_tm)]
     localtime_r.restype = POINTER(struct_tm)
 
-# /tmp/binding_gen/preprocessed.h: 612
+# /tmp/binding_gen/preprocessed.h: 611
 if _libs["libc.so.6"].has("asctime", "cdecl"):
     asctime = _libs["libc.so.6"].get("asctime", "cdecl")
     asctime.argtypes = [POINTER(struct_tm)]
@@ -2284,7 +2284,7 @@ if _libs["libc.so.6"].has("asctime", "cdecl"):
         asctime.restype = String
         asctime.errcheck = ReturnString
 
-# /tmp/binding_gen/preprocessed.h: 613
+# /tmp/binding_gen/preprocessed.h: 612
 if _libs["libc.so.6"].has("ctime", "cdecl"):
     ctime = _libs["libc.so.6"].get("ctime", "cdecl")
     ctime.argtypes = [POINTER(time_t)]
@@ -2294,7 +2294,7 @@ if _libs["libc.so.6"].has("ctime", "cdecl"):
         ctime.restype = String
         ctime.errcheck = ReturnString
 
-# /tmp/binding_gen/preprocessed.h: 614
+# /tmp/binding_gen/preprocessed.h: 613
 if _libs["libc.so.6"].has("asctime_r", "cdecl"):
     asctime_r = _libs["libc.so.6"].get("asctime_r", "cdecl")
     asctime_r.argtypes = [POINTER(struct_tm), String]
@@ -2304,7 +2304,7 @@ if _libs["libc.so.6"].has("asctime_r", "cdecl"):
         asctime_r.restype = String
         asctime_r.errcheck = ReturnString
 
-# /tmp/binding_gen/preprocessed.h: 616
+# /tmp/binding_gen/preprocessed.h: 615
 if _libs["libc.so.6"].has("ctime_r", "cdecl"):
     ctime_r = _libs["libc.so.6"].get("ctime_r", "cdecl")
     ctime_r.argtypes = [POINTER(time_t), String]
@@ -2314,163 +2314,163 @@ if _libs["libc.so.6"].has("ctime_r", "cdecl"):
         ctime_r.restype = String
         ctime_r.errcheck = ReturnString
 
-# /tmp/binding_gen/preprocessed.h: 618
+# /tmp/binding_gen/preprocessed.h: 617
 try:
     __tzname = (POINTER(c_char) * int(2)).in_dll(_libs["libc.so.6"], "__tzname")
 except:
     pass
 
-# /tmp/binding_gen/preprocessed.h: 619
+# /tmp/binding_gen/preprocessed.h: 618
 try:
     __daylight = (c_int).in_dll(_libs["libc.so.6"], "__daylight")
 except:
     pass
 
-# /tmp/binding_gen/preprocessed.h: 620
+# /tmp/binding_gen/preprocessed.h: 619
 try:
     __timezone = (c_long).in_dll(_libs["libc.so.6"], "__timezone")
 except:
     pass
 
-# /tmp/binding_gen/preprocessed.h: 621
+# /tmp/binding_gen/preprocessed.h: 620
 try:
     tzname = (POINTER(c_char) * int(2)).in_dll(_libs["libc.so.6"], "tzname")
 except:
     pass
 
-# /tmp/binding_gen/preprocessed.h: 622
+# /tmp/binding_gen/preprocessed.h: 621
 if _libs["libc.so.6"].has("tzset", "cdecl"):
     tzset = _libs["libc.so.6"].get("tzset", "cdecl")
     tzset.argtypes = []
     tzset.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 623
+# /tmp/binding_gen/preprocessed.h: 622
 try:
     daylight = (c_int).in_dll(_libs["libc.so.6"], "daylight")
 except:
     pass
 
-# /tmp/binding_gen/preprocessed.h: 624
+# /tmp/binding_gen/preprocessed.h: 623
 try:
     timezone = (c_long).in_dll(_libs["libc.so.6"], "timezone")
 except:
     pass
 
-# /tmp/binding_gen/preprocessed.h: 625
+# /tmp/binding_gen/preprocessed.h: 624
 if _libs["libc.so.6"].has("timegm", "cdecl"):
     timegm = _libs["libc.so.6"].get("timegm", "cdecl")
     timegm.argtypes = [POINTER(struct_tm)]
     timegm.restype = time_t
 
-# /tmp/binding_gen/preprocessed.h: 626
+# /tmp/binding_gen/preprocessed.h: 625
 if _libs["libc.so.6"].has("timelocal", "cdecl"):
     timelocal = _libs["libc.so.6"].get("timelocal", "cdecl")
     timelocal.argtypes = [POINTER(struct_tm)]
     timelocal.restype = time_t
 
-# /tmp/binding_gen/preprocessed.h: 627
+# /tmp/binding_gen/preprocessed.h: 626
 if _libs["libc.so.6"].has("dysize", "cdecl"):
     dysize = _libs["libc.so.6"].get("dysize", "cdecl")
     dysize.argtypes = [c_int]
     dysize.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 628
+# /tmp/binding_gen/preprocessed.h: 627
 if _libs["libc.so.6"].has("nanosleep", "cdecl"):
     nanosleep = _libs["libc.so.6"].get("nanosleep", "cdecl")
     nanosleep.argtypes = [POINTER(struct_timespec), POINTER(struct_timespec)]
     nanosleep.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 630
+# /tmp/binding_gen/preprocessed.h: 629
 if _libs["libc.so.6"].has("clock_getres", "cdecl"):
     clock_getres = _libs["libc.so.6"].get("clock_getres", "cdecl")
     clock_getres.argtypes = [clockid_t, POINTER(struct_timespec)]
     clock_getres.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 631
+# /tmp/binding_gen/preprocessed.h: 630
 if _libs["libc.so.6"].has("clock_gettime", "cdecl"):
     clock_gettime = _libs["libc.so.6"].get("clock_gettime", "cdecl")
     clock_gettime.argtypes = [clockid_t, POINTER(struct_timespec)]
     clock_gettime.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 633
+# /tmp/binding_gen/preprocessed.h: 631
 if _libs["libc.so.6"].has("clock_settime", "cdecl"):
     clock_settime = _libs["libc.so.6"].get("clock_settime", "cdecl")
     clock_settime.argtypes = [clockid_t, POINTER(struct_timespec)]
     clock_settime.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 635
+# /tmp/binding_gen/preprocessed.h: 633
 if _libs["libc.so.6"].has("clock_nanosleep", "cdecl"):
     clock_nanosleep = _libs["libc.so.6"].get("clock_nanosleep", "cdecl")
     clock_nanosleep.argtypes = [clockid_t, c_int, POINTER(struct_timespec), POINTER(struct_timespec)]
     clock_nanosleep.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 638
+# /tmp/binding_gen/preprocessed.h: 636
 if _libs["libc.so.6"].has("clock_getcpuclockid", "cdecl"):
     clock_getcpuclockid = _libs["libc.so.6"].get("clock_getcpuclockid", "cdecl")
     clock_getcpuclockid.argtypes = [pid_t, POINTER(clockid_t)]
     clock_getcpuclockid.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 639
+# /tmp/binding_gen/preprocessed.h: 637
 if _libs["libc.so.6"].has("timer_create", "cdecl"):
     timer_create = _libs["libc.so.6"].get("timer_create", "cdecl")
     timer_create.argtypes = [clockid_t, POINTER(struct_sigevent), POINTER(timer_t)]
     timer_create.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 642
+# /tmp/binding_gen/preprocessed.h: 640
 if _libs["libc.so.6"].has("timer_delete", "cdecl"):
     timer_delete = _libs["libc.so.6"].get("timer_delete", "cdecl")
     timer_delete.argtypes = [timer_t]
     timer_delete.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 643
+# /tmp/binding_gen/preprocessed.h: 641
 if _libs["libc.so.6"].has("timer_settime", "cdecl"):
     timer_settime = _libs["libc.so.6"].get("timer_settime", "cdecl")
     timer_settime.argtypes = [timer_t, c_int, POINTER(struct_itimerspec), POINTER(struct_itimerspec)]
     timer_settime.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 646
+# /tmp/binding_gen/preprocessed.h: 644
 if _libs["libc.so.6"].has("timer_gettime", "cdecl"):
     timer_gettime = _libs["libc.so.6"].get("timer_gettime", "cdecl")
     timer_gettime.argtypes = [timer_t, POINTER(struct_itimerspec)]
     timer_gettime.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 648
+# /tmp/binding_gen/preprocessed.h: 646
 if _libs["libc.so.6"].has("timer_getoverrun", "cdecl"):
     timer_getoverrun = _libs["libc.so.6"].get("timer_getoverrun", "cdecl")
     timer_getoverrun.argtypes = [timer_t]
     timer_getoverrun.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 649
+# /tmp/binding_gen/preprocessed.h: 647
 if _libs["libc.so.6"].has("timespec_get", "cdecl"):
     timespec_get = _libs["libc.so.6"].get("timespec_get", "cdecl")
     timespec_get.argtypes = [POINTER(struct_timespec), c_int]
     timespec_get.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 651
+# /tmp/binding_gen/preprocessed.h: 649
 if _libs["libc.so.6"].has("timespec_getres", "cdecl"):
     timespec_getres = _libs["libc.so.6"].get("timespec_getres", "cdecl")
     timespec_getres.argtypes = [POINTER(struct_timespec), c_int]
     timespec_getres.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 653
+# /tmp/binding_gen/preprocessed.h: 651
 try:
     getdate_err = (c_int).in_dll(_libs["libc.so.6"], "getdate_err")
 except:
     pass
 
-# /tmp/binding_gen/preprocessed.h: 654
+# /tmp/binding_gen/preprocessed.h: 652
 if _libs["libc.so.6"].has("getdate", "cdecl"):
     getdate = _libs["libc.so.6"].get("getdate", "cdecl")
     getdate.argtypes = [String]
     getdate.restype = POINTER(struct_tm)
 
-# /tmp/binding_gen/preprocessed.h: 655
+# /tmp/binding_gen/preprocessed.h: 653
 if _libs["libc.so.6"].has("getdate_r", "cdecl"):
     getdate_r = _libs["libc.so.6"].get("getdate_r", "cdecl")
     getdate_r.argtypes = [String, POINTER(struct_tm)]
     getdate_r.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 668
+# /tmp/binding_gen/preprocessed.h: 666
 class struct_anon_8(Structure):
     pass
 
@@ -2483,7 +2483,7 @@ struct_anon_8._fields_ = [
     ('timestamp_hi', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 665
+# /tmp/binding_gen/preprocessed.h: 663
 class union_anon_9(Union):
     pass
 
@@ -2499,7 +2499,7 @@ union_anon_9._fields_ = [
     ('unnamed_1', struct_anon_8),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 674
+# /tmp/binding_gen/preprocessed.h: 672
 class union_anon_10(Union):
     pass
 
@@ -2512,7 +2512,7 @@ union_anon_10._fields_ = [
     ('fix_type_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 680
+# /tmp/binding_gen/preprocessed.h: 678
 class union_anon_11(Union):
     pass
 
@@ -2525,7 +2525,7 @@ union_anon_11._fields_ = [
     ('units_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 685
+# /tmp/binding_gen/preprocessed.h: 683
 class union_anon_12(Union):
     pass
 
@@ -2538,7 +2538,7 @@ union_anon_12._fields_ = [
     ('device_status_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 691
+# /tmp/binding_gen/preprocessed.h: 689
 class struct_jon_gui_data_gps(Structure):
     pass
 
@@ -2577,9 +2577,9 @@ struct_jon_gui_data_gps._fields_ = [
     ('meteo', jon_gui_data_component_meteo),
 ]
 
-jon_gui_data_gps = struct_jon_gui_data_gps# /tmp/binding_gen/preprocessed.h: 691
+jon_gui_data_gps = struct_jon_gui_data_gps# /tmp/binding_gen/preprocessed.h: 689
 
-# /tmp/binding_gen/preprocessed.h: 692
+# /tmp/binding_gen/preprocessed.h: 690
 for _lib in _libs.values():
     try:
         jon_gui_default_state_gps = (jon_gui_data_gps).in_dll(_lib, "jon_gui_default_state_gps")
@@ -2587,19 +2587,19 @@ for _lib in _libs.values():
     except:
         pass
 
-enum_jon_gui_data_mode = c_int# /tmp/binding_gen/preprocessed.h: 699
+enum_jon_gui_data_mode = c_int# /tmp/binding_gen/preprocessed.h: 697
 
-JON_GUI_DATA_MODE_DEFAULT = 0# /tmp/binding_gen/preprocessed.h: 699
+JON_GUI_DATA_MODE_DEFAULT = 0# /tmp/binding_gen/preprocessed.h: 697
 
-JON_GUI_DATA_MODE_FADED = (JON_GUI_DATA_MODE_DEFAULT + 1)# /tmp/binding_gen/preprocessed.h: 699
+JON_GUI_DATA_MODE_FADED = (JON_GUI_DATA_MODE_DEFAULT + 1)# /tmp/binding_gen/preprocessed.h: 697
 
-JON_GUI_DATA_MODE_OSD_OFF = (JON_GUI_DATA_MODE_FADED + 1)# /tmp/binding_gen/preprocessed.h: 699
+JON_GUI_DATA_MODE_OSD_OFF = (JON_GUI_DATA_MODE_FADED + 1)# /tmp/binding_gen/preprocessed.h: 697
 
-_JON_GUI_DATA_MODE_AFTER_LAST_ = (JON_GUI_DATA_MODE_OSD_OFF + 1)# /tmp/binding_gen/preprocessed.h: 699
+_JON_GUI_DATA_MODE_AFTER_LAST_ = (JON_GUI_DATA_MODE_OSD_OFF + 1)# /tmp/binding_gen/preprocessed.h: 697
 
-jon_gui_data_mode = enum_jon_gui_data_mode# /tmp/binding_gen/preprocessed.h: 699
+jon_gui_data_mode = enum_jon_gui_data_mode# /tmp/binding_gen/preprocessed.h: 697
 
-# /tmp/binding_gen/preprocessed.h: 705
+# /tmp/binding_gen/preprocessed.h: 703
 class union_anon_13(Union):
     pass
 
@@ -2612,7 +2612,7 @@ union_anon_13._fields_ = [
     ('active_mode_id_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 710
+# /tmp/binding_gen/preprocessed.h: 708
 class union_anon_14(Union):
     pass
 
@@ -2625,7 +2625,7 @@ union_anon_14._fields_ = [
     ('active_screen_id_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 715
+# /tmp/binding_gen/preprocessed.h: 713
 class struct_jon_gui_data_header(Structure):
     pass
 
@@ -2648,9 +2648,9 @@ struct_jon_gui_data_header._fields_ = [
     ('unnamed_2', union_anon_14),
 ]
 
-jon_gui_data_header = struct_jon_gui_data_header# /tmp/binding_gen/preprocessed.h: 715
+jon_gui_data_header = struct_jon_gui_data_header# /tmp/binding_gen/preprocessed.h: 713
 
-# /tmp/binding_gen/preprocessed.h: 716
+# /tmp/binding_gen/preprocessed.h: 714
 for _lib in _libs.values():
     try:
         jon_gui_default_state_header = (jon_gui_data_header).in_dll(_lib, "jon_gui_default_state_header")
@@ -2658,7 +2658,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 755
+# /tmp/binding_gen/preprocessed.h: 753
 class union_anon_15(Union):
     pass
 
@@ -2671,7 +2671,7 @@ union_anon_15._fields_ = [
     ('device_status_day_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 760
+# /tmp/binding_gen/preprocessed.h: 758
 class union_anon_16(Union):
     pass
 
@@ -2684,7 +2684,7 @@ union_anon_16._fields_ = [
     ('device_status_heat_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 765
+# /tmp/binding_gen/preprocessed.h: 763
 class union_anon_17(Union):
     pass
 
@@ -2697,7 +2697,7 @@ union_anon_17._fields_ = [
     ('fx_mode_day_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 770
+# /tmp/binding_gen/preprocessed.h: 768
 class union_anon_18(Union):
     pass
 
@@ -2710,7 +2710,7 @@ union_anon_18._fields_ = [
     ('fx_mode_heat_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 775
+# /tmp/binding_gen/preprocessed.h: 773
 class struct_jon_gui_data_lens(Structure):
     pass
 
@@ -2805,9 +2805,9 @@ struct_jon_gui_data_lens._fields_ = [
     ('unnamed_4', union_anon_18),
 ]
 
-jon_gui_data_lens = struct_jon_gui_data_lens# /tmp/binding_gen/preprocessed.h: 775
+jon_gui_data_lens = struct_jon_gui_data_lens# /tmp/binding_gen/preprocessed.h: 773
 
-# /tmp/binding_gen/preprocessed.h: 776
+# /tmp/binding_gen/preprocessed.h: 774
 for _lib in _libs.values():
     try:
         jon_gui_default_state_lens = (jon_gui_data_lens).in_dll(_lib, "jon_gui_default_state_lens")
@@ -2815,7 +2815,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 788
+# /tmp/binding_gen/preprocessed.h: 786
 class union_anon_19(Union):
     pass
 
@@ -2828,7 +2828,7 @@ union_anon_19._fields_ = [
     ('target_designator_status_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 794
+# /tmp/binding_gen/preprocessed.h: 792
 class union_anon_20(Union):
     pass
 
@@ -2841,7 +2841,7 @@ union_anon_20._fields_ = [
     ('device_status_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 800
+# /tmp/binding_gen/preprocessed.h: 798
 class struct_jon_gui_data_lrf(Structure):
     pass
 
@@ -2880,9 +2880,9 @@ struct_jon_gui_data_lrf._fields_ = [
     ('meteo', jon_gui_data_component_meteo),
 ]
 
-jon_gui_data_lrf = struct_jon_gui_data_lrf# /tmp/binding_gen/preprocessed.h: 800
+jon_gui_data_lrf = struct_jon_gui_data_lrf# /tmp/binding_gen/preprocessed.h: 798
 
-# /tmp/binding_gen/preprocessed.h: 801
+# /tmp/binding_gen/preprocessed.h: 799
 for _lib in _libs.values():
     try:
         jon_gui_default_state_lrf = (jon_gui_data_lrf).in_dll(_lib, "jon_gui_default_state_lrf")
@@ -2890,7 +2890,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 806
+# /tmp/binding_gen/preprocessed.h: 804
 class struct_jon_gui_data_media(Structure):
     pass
 
@@ -2901,9 +2901,9 @@ struct_jon_gui_data_media._fields_ = [
     ('space_left_prc', c_int32),
 ]
 
-jon_gui_data_media = struct_jon_gui_data_media# /tmp/binding_gen/preprocessed.h: 806
+jon_gui_data_media = struct_jon_gui_data_media# /tmp/binding_gen/preprocessed.h: 804
 
-# /tmp/binding_gen/preprocessed.h: 807
+# /tmp/binding_gen/preprocessed.h: 805
 for _lib in _libs.values():
     try:
         jon_gui_default_state_media = (jon_gui_data_media).in_dll(_lib, "jon_gui_default_state_media")
@@ -2911,7 +2911,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 816
+# /tmp/binding_gen/preprocessed.h: 814
 class struct_jon_gui_data_meteo(Structure):
     pass
 
@@ -2932,9 +2932,9 @@ struct_jon_gui_data_meteo._fields_ = [
     ('external_pressure', c_int32),
 ]
 
-jon_gui_data_meteo = struct_jon_gui_data_meteo# /tmp/binding_gen/preprocessed.h: 816
+jon_gui_data_meteo = struct_jon_gui_data_meteo# /tmp/binding_gen/preprocessed.h: 814
 
-# /tmp/binding_gen/preprocessed.h: 817
+# /tmp/binding_gen/preprocessed.h: 815
 for _lib in _libs.values():
     try:
         jon_gui_default_state_meteo = (jon_gui_data_meteo).in_dll(_lib, "jon_gui_default_state_meteo")
@@ -2942,23 +2942,23 @@ for _lib in _libs.values():
     except:
         pass
 
-enum_jon_gui_data_osd_pip_pos = c_int# /tmp/binding_gen/preprocessed.h: 826
+enum_jon_gui_data_osd_pip_pos = c_int# /tmp/binding_gen/preprocessed.h: 824
 
-JON_GUI_DATA_OSD_PIP_DISABLED = 0# /tmp/binding_gen/preprocessed.h: 826
+JON_GUI_DATA_OSD_PIP_DISABLED = 0# /tmp/binding_gen/preprocessed.h: 824
 
-JON_GUI_DATA_OSD_PIP_TOP_LEFT = (JON_GUI_DATA_OSD_PIP_DISABLED + 1)# /tmp/binding_gen/preprocessed.h: 826
+JON_GUI_DATA_OSD_PIP_TOP_LEFT = (JON_GUI_DATA_OSD_PIP_DISABLED + 1)# /tmp/binding_gen/preprocessed.h: 824
 
-JON_GUI_DATA_OSD_PIP_TOP_RIGHT = (JON_GUI_DATA_OSD_PIP_TOP_LEFT + 1)# /tmp/binding_gen/preprocessed.h: 826
+JON_GUI_DATA_OSD_PIP_TOP_RIGHT = (JON_GUI_DATA_OSD_PIP_TOP_LEFT + 1)# /tmp/binding_gen/preprocessed.h: 824
 
-JON_GUI_DATA_OSD_PIP_BOTTOM_RIGHT = (JON_GUI_DATA_OSD_PIP_TOP_RIGHT + 1)# /tmp/binding_gen/preprocessed.h: 826
+JON_GUI_DATA_OSD_PIP_BOTTOM_RIGHT = (JON_GUI_DATA_OSD_PIP_TOP_RIGHT + 1)# /tmp/binding_gen/preprocessed.h: 824
 
-JON_GUI_DATA_OSD_PIP_BOTTOM_LEFT = (JON_GUI_DATA_OSD_PIP_BOTTOM_RIGHT + 1)# /tmp/binding_gen/preprocessed.h: 826
+JON_GUI_DATA_OSD_PIP_BOTTOM_LEFT = (JON_GUI_DATA_OSD_PIP_BOTTOM_RIGHT + 1)# /tmp/binding_gen/preprocessed.h: 824
 
-_JON_GUI_DATA_OSD_PIP_AFTER_LAST_ = (JON_GUI_DATA_OSD_PIP_BOTTOM_LEFT + 1)# /tmp/binding_gen/preprocessed.h: 826
+_JON_GUI_DATA_OSD_PIP_AFTER_LAST_ = (JON_GUI_DATA_OSD_PIP_BOTTOM_LEFT + 1)# /tmp/binding_gen/preprocessed.h: 824
 
-jon_gui_data_osd_pip_pos = enum_jon_gui_data_osd_pip_pos# /tmp/binding_gen/preprocessed.h: 826
+jon_gui_data_osd_pip_pos = enum_jon_gui_data_osd_pip_pos# /tmp/binding_gen/preprocessed.h: 824
 
-# /tmp/binding_gen/preprocessed.h: 837
+# /tmp/binding_gen/preprocessed.h: 835
 class union_anon_21(Union):
     pass
 
@@ -2971,7 +2971,7 @@ union_anon_21._fields_ = [
     ('pip_pos_id_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 842
+# /tmp/binding_gen/preprocessed.h: 840
 class struct_jon_gui_data_osd(Structure):
     pass
 
@@ -3001,9 +3001,9 @@ struct_jon_gui_data_osd._fields_ = [
     ('unnamed_1', union_anon_21),
 ]
 
-jon_gui_data_osd = struct_jon_gui_data_osd# /tmp/binding_gen/preprocessed.h: 842
+jon_gui_data_osd = struct_jon_gui_data_osd# /tmp/binding_gen/preprocessed.h: 840
 
-# /tmp/binding_gen/preprocessed.h: 843
+# /tmp/binding_gen/preprocessed.h: 841
 for _lib in _libs.values():
     try:
         jon_gui_default_state_osd = (jon_gui_data_osd).in_dll(_lib, "jon_gui_default_state_osd")
@@ -3011,7 +3011,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 873
+# /tmp/binding_gen/preprocessed.h: 871
 class union_anon_22(Union):
     pass
 
@@ -3024,7 +3024,7 @@ union_anon_22._fields_ = [
     ('device_status_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 878
+# /tmp/binding_gen/preprocessed.h: 876
 class union_anon_23(Union):
     pass
 
@@ -3037,7 +3037,7 @@ union_anon_23._fields_ = [
     ('mode_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 887
+# /tmp/binding_gen/preprocessed.h: 885
 class struct_jon_gui_data_rotary(Structure):
     pass
 
@@ -3116,9 +3116,9 @@ struct_jon_gui_data_rotary._fields_ = [
     ('tilt_init', c_int32),
 ]
 
-jon_gui_data_rotary = struct_jon_gui_data_rotary# /tmp/binding_gen/preprocessed.h: 887
+jon_gui_data_rotary = struct_jon_gui_data_rotary# /tmp/binding_gen/preprocessed.h: 885
 
-# /tmp/binding_gen/preprocessed.h: 888
+# /tmp/binding_gen/preprocessed.h: 886
 for _lib in _libs.values():
     try:
         jon_gui_default_state_rotary = (jon_gui_data_rotary).in_dll(_lib, "jon_gui_default_state_rotary")
@@ -3126,7 +3126,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 898
+# /tmp/binding_gen/preprocessed.h: 896
 class union_anon_24(Union):
     pass
 
@@ -3139,7 +3139,7 @@ union_anon_24._fields_ = [
     ('can_device_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 903
+# /tmp/binding_gen/preprocessed.h: 901
 class struct_jon_gui_data_power_module_state(Structure):
     pass
 
@@ -3167,9 +3167,9 @@ struct_jon_gui_data_power_module_state._fields_ = [
     ('unnamed_1', union_anon_24),
 ]
 
-jon_gui_data_power_module_state = struct_jon_gui_data_power_module_state# /tmp/binding_gen/preprocessed.h: 903
+jon_gui_data_power_module_state = struct_jon_gui_data_power_module_state# /tmp/binding_gen/preprocessed.h: 901
 
-# /tmp/binding_gen/preprocessed.h: 915
+# /tmp/binding_gen/preprocessed.h: 913
 class struct_jon_gui_data_power(Structure):
     pass
 
@@ -3196,9 +3196,9 @@ struct_jon_gui_data_power._fields_ = [
     ('meteo', jon_gui_data_component_meteo),
 ]
 
-jon_gui_data_power = struct_jon_gui_data_power# /tmp/binding_gen/preprocessed.h: 915
+jon_gui_data_power = struct_jon_gui_data_power# /tmp/binding_gen/preprocessed.h: 913
 
-# /tmp/binding_gen/preprocessed.h: 916
+# /tmp/binding_gen/preprocessed.h: 914
 for _lib in _libs.values():
     try:
         jon_gui_default_state_power = (jon_gui_data_power).in_dll(_lib, "jon_gui_default_state_power")
@@ -3206,21 +3206,21 @@ for _lib in _libs.values():
     except:
         pass
 
-enum_jon_gui_data_system_localizations = c_int# /tmp/binding_gen/preprocessed.h: 924
+enum_jon_gui_data_system_localizations = c_int# /tmp/binding_gen/preprocessed.h: 922
 
-jon_gui_data_system_localization_en = 0# /tmp/binding_gen/preprocessed.h: 924
+jon_gui_data_system_localization_en = 0# /tmp/binding_gen/preprocessed.h: 922
 
-jon_gui_data_system_localization_ua = (jon_gui_data_system_localization_en + 1)# /tmp/binding_gen/preprocessed.h: 924
+jon_gui_data_system_localization_ua = (jon_gui_data_system_localization_en + 1)# /tmp/binding_gen/preprocessed.h: 922
 
-jon_gui_data_system_localization_ar = (jon_gui_data_system_localization_ua + 1)# /tmp/binding_gen/preprocessed.h: 924
+jon_gui_data_system_localization_ar = (jon_gui_data_system_localization_ua + 1)# /tmp/binding_gen/preprocessed.h: 922
 
-jon_gui_data_system_localization_cs = (jon_gui_data_system_localization_ar + 1)# /tmp/binding_gen/preprocessed.h: 924
+jon_gui_data_system_localization_cs = (jon_gui_data_system_localization_ar + 1)# /tmp/binding_gen/preprocessed.h: 922
 
-_jon_gui_data_system_localization_after_last_ = (jon_gui_data_system_localization_cs + 1)# /tmp/binding_gen/preprocessed.h: 924
+_jon_gui_data_system_localization_after_last_ = (jon_gui_data_system_localization_cs + 1)# /tmp/binding_gen/preprocessed.h: 922
 
-jon_gui_data_system_localizations = enum_jon_gui_data_system_localizations# /tmp/binding_gen/preprocessed.h: 924
+jon_gui_data_system_localizations = enum_jon_gui_data_system_localizations# /tmp/binding_gen/preprocessed.h: 922
 
-# /tmp/binding_gen/preprocessed.h: 944
+# /tmp/binding_gen/preprocessed.h: 942
 class union_anon_25(Union):
     pass
 
@@ -3233,7 +3233,7 @@ union_anon_25._fields_ = [
     ('localization_id_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 949
+# /tmp/binding_gen/preprocessed.h: 947
 class union_anon_26(Union):
     pass
 
@@ -3246,7 +3246,7 @@ union_anon_26._fields_ = [
     ('active_video_channel_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 954
+# /tmp/binding_gen/preprocessed.h: 952
 class union_anon_27(Union):
     pass
 
@@ -3259,7 +3259,7 @@ union_anon_27._fields_ = [
     ('active_thermal_color_filter_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 960
+# /tmp/binding_gen/preprocessed.h: 958
 class union_anon_28(Union):
     pass
 
@@ -3272,7 +3272,7 @@ union_anon_28._fields_ = [
     ('active_day_filter_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 965
+# /tmp/binding_gen/preprocessed.h: 963
 class union_anon_29(Union):
     pass
 
@@ -3285,7 +3285,7 @@ union_anon_29._fields_ = [
     ('acccumulator_stat_idx_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 970
+# /tmp/binding_gen/preprocessed.h: 968
 class union_anon_30(Union):
     pass
 
@@ -3298,7 +3298,7 @@ union_anon_30._fields_ = [
     ('sd_card_stat_idx_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 983
+# /tmp/binding_gen/preprocessed.h: 981
 class struct_jon_gui_data_system(Structure):
     pass
 
@@ -3377,9 +3377,9 @@ struct_jon_gui_data_system._fields_ = [
     ('no_disk_space', c_int32),
 ]
 
-jon_gui_data_system = struct_jon_gui_data_system# /tmp/binding_gen/preprocessed.h: 983
+jon_gui_data_system = struct_jon_gui_data_system# /tmp/binding_gen/preprocessed.h: 981
 
-# /tmp/binding_gen/preprocessed.h: 984
+# /tmp/binding_gen/preprocessed.h: 982
 for _lib in _libs.values():
     try:
         jon_gui_default_state_system = (jon_gui_data_system).in_dll(_lib, "jon_gui_default_state_system")
@@ -3387,7 +3387,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 994
+# /tmp/binding_gen/preprocessed.h: 992
 class union_anon_31(Union):
     pass
 
@@ -3400,7 +3400,7 @@ union_anon_31._fields_ = [
     ('observer_timestamp_packed', c_int64),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1008
+# /tmp/binding_gen/preprocessed.h: 1006
 class union_anon_32(Union):
     pass
 
@@ -3413,7 +3413,7 @@ union_anon_32._fields_ = [
     ('observer_fix_type_packed', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1013
+# /tmp/binding_gen/preprocessed.h: 1011
 class struct_jon_gui_data_target_spec(Structure):
     pass
 
@@ -3462,21 +3462,21 @@ struct_jon_gui_data_target_spec._fields_ = [
     ('unnamed_2', union_anon_32),
 ]
 
-jon_gui_data_target_spec = struct_jon_gui_data_target_spec# /tmp/binding_gen/preprocessed.h: 1013
+jon_gui_data_target_spec = struct_jon_gui_data_target_spec# /tmp/binding_gen/preprocessed.h: 1011
 
-enum_jon_gui_data_targets_screenshot_state = c_int# /tmp/binding_gen/preprocessed.h: 1020
+enum_jon_gui_data_targets_screenshot_state = c_int# /tmp/binding_gen/preprocessed.h: 1018
 
-JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_INFO = 0# /tmp/binding_gen/preprocessed.h: 1020
+JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_INFO = 0# /tmp/binding_gen/preprocessed.h: 1018
 
-JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_DAY = (JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_INFO + 1)# /tmp/binding_gen/preprocessed.h: 1020
+JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_DAY = (JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_INFO + 1)# /tmp/binding_gen/preprocessed.h: 1018
 
-JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_HEAT = (JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_DAY + 1)# /tmp/binding_gen/preprocessed.h: 1020
+JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_HEAT = (JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_DAY + 1)# /tmp/binding_gen/preprocessed.h: 1018
 
-__JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_AFTER_LAST__ = (JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_HEAT + 1)# /tmp/binding_gen/preprocessed.h: 1020
+__JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_AFTER_LAST__ = (JON_GUI_DATA_TARGETS_SCREENSHOT_STATE_HEAT + 1)# /tmp/binding_gen/preprocessed.h: 1018
 
-jon_gui_data_targets_screenshot_state = enum_jon_gui_data_targets_screenshot_state# /tmp/binding_gen/preprocessed.h: 1020
+jon_gui_data_targets_screenshot_state = enum_jon_gui_data_targets_screenshot_state# /tmp/binding_gen/preprocessed.h: 1018
 
-# /tmp/binding_gen/preprocessed.h: 1027
+# /tmp/binding_gen/preprocessed.h: 1025
 class struct_jon_gui_data_targets(Structure):
     pass
 
@@ -3493,9 +3493,9 @@ struct_jon_gui_data_targets._fields_ = [
     ('screenshot_state', jon_gui_data_targets_screenshot_state),
 ]
 
-jon_gui_data_targets = struct_jon_gui_data_targets# /tmp/binding_gen/preprocessed.h: 1027
+jon_gui_data_targets = struct_jon_gui_data_targets# /tmp/binding_gen/preprocessed.h: 1025
 
-# /tmp/binding_gen/preprocessed.h: 1028
+# /tmp/binding_gen/preprocessed.h: 1026
 for _lib in _libs.values():
     try:
         jon_gui_default_state_targets = (jon_gui_data_targets).in_dll(_lib, "jon_gui_default_state_targets")
@@ -3503,7 +3503,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 1034
+# /tmp/binding_gen/preprocessed.h: 1032
 class struct_anon_33(Structure):
     pass
 
@@ -3516,7 +3516,7 @@ struct_anon_33._fields_ = [
     ('timestamp_hi', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1031
+# /tmp/binding_gen/preprocessed.h: 1029
 class union_anon_34(Union):
     pass
 
@@ -3532,7 +3532,7 @@ union_anon_34._fields_ = [
     ('unnamed_1', struct_anon_33),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1043
+# /tmp/binding_gen/preprocessed.h: 1041
 class struct_anon_35(Structure):
     pass
 
@@ -3545,7 +3545,7 @@ struct_anon_35._fields_ = [
     ('manual_timestamp_hi', c_int32),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1040
+# /tmp/binding_gen/preprocessed.h: 1038
 class union_anon_36(Union):
     pass
 
@@ -3561,7 +3561,7 @@ union_anon_36._fields_ = [
     ('unnamed_1', struct_anon_35),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1051
+# /tmp/binding_gen/preprocessed.h: 1049
 class struct_jon_gui_data_time(Structure):
     pass
 
@@ -3582,9 +3582,9 @@ struct_jon_gui_data_time._fields_ = [
     ('use_manual_time', c_int32),
 ]
 
-jon_gui_data_time = struct_jon_gui_data_time# /tmp/binding_gen/preprocessed.h: 1051
+jon_gui_data_time = struct_jon_gui_data_time# /tmp/binding_gen/preprocessed.h: 1049
 
-# /tmp/binding_gen/preprocessed.h: 1052
+# /tmp/binding_gen/preprocessed.h: 1050
 for _lib in _libs.values():
     try:
         jon_gui_default_state_time = (jon_gui_data_time).in_dll(_lib, "jon_gui_default_state_time")
@@ -3592,55 +3592,55 @@ for _lib in _libs.values():
     except:
         pass
 
-enum_jon_gui_tracking_color = c_int# /tmp/binding_gen/preprocessed.h: 1078
+enum_jon_gui_tracking_color = c_int# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_RED = 0# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_RED = 0# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_GREEN = (JON_GUI_TRACKING_COLOR_RED + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_GREEN = (JON_GUI_TRACKING_COLOR_RED + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_BLUE = (JON_GUI_TRACKING_COLOR_GREEN + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_BLUE = (JON_GUI_TRACKING_COLOR_GREEN + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_YELLOW = (JON_GUI_TRACKING_COLOR_BLUE + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_YELLOW = (JON_GUI_TRACKING_COLOR_BLUE + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_MAGENTA = (JON_GUI_TRACKING_COLOR_YELLOW + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_MAGENTA = (JON_GUI_TRACKING_COLOR_YELLOW + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_CYAN = (JON_GUI_TRACKING_COLOR_MAGENTA + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_CYAN = (JON_GUI_TRACKING_COLOR_MAGENTA + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_ORANGE = (JON_GUI_TRACKING_COLOR_CYAN + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_ORANGE = (JON_GUI_TRACKING_COLOR_CYAN + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_PURPLE = (JON_GUI_TRACKING_COLOR_ORANGE + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_PURPLE = (JON_GUI_TRACKING_COLOR_ORANGE + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_LIME = (JON_GUI_TRACKING_COLOR_PURPLE + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_LIME = (JON_GUI_TRACKING_COLOR_PURPLE + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_PINK = (JON_GUI_TRACKING_COLOR_LIME + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_PINK = (JON_GUI_TRACKING_COLOR_LIME + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_TEAL = (JON_GUI_TRACKING_COLOR_PINK + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_TEAL = (JON_GUI_TRACKING_COLOR_PINK + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_LAVENDER = (JON_GUI_TRACKING_COLOR_TEAL + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_LAVENDER = (JON_GUI_TRACKING_COLOR_TEAL + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_BROWN = (JON_GUI_TRACKING_COLOR_LAVENDER + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_BROWN = (JON_GUI_TRACKING_COLOR_LAVENDER + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_BEIGE = (JON_GUI_TRACKING_COLOR_BROWN + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_BEIGE = (JON_GUI_TRACKING_COLOR_BROWN + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_MAROON = (JON_GUI_TRACKING_COLOR_BEIGE + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_MAROON = (JON_GUI_TRACKING_COLOR_BEIGE + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_MINT = (JON_GUI_TRACKING_COLOR_MAROON + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_MINT = (JON_GUI_TRACKING_COLOR_MAROON + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_OLIVE = (JON_GUI_TRACKING_COLOR_MINT + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_OLIVE = (JON_GUI_TRACKING_COLOR_MINT + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_APRICOT = (JON_GUI_TRACKING_COLOR_OLIVE + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_APRICOT = (JON_GUI_TRACKING_COLOR_OLIVE + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_NAVY = (JON_GUI_TRACKING_COLOR_APRICOT + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_NAVY = (JON_GUI_TRACKING_COLOR_APRICOT + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_GREY = (JON_GUI_TRACKING_COLOR_NAVY + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_GREY = (JON_GUI_TRACKING_COLOR_NAVY + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_WHITE = (JON_GUI_TRACKING_COLOR_GREY + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_WHITE = (JON_GUI_TRACKING_COLOR_GREY + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-JON_GUI_TRACKING_COLOR_BLACK = (JON_GUI_TRACKING_COLOR_WHITE + 1)# /tmp/binding_gen/preprocessed.h: 1078
+JON_GUI_TRACKING_COLOR_BLACK = (JON_GUI_TRACKING_COLOR_WHITE + 1)# /tmp/binding_gen/preprocessed.h: 1076
 
-jon_gui_tracking_color_t = enum_jon_gui_tracking_color# /tmp/binding_gen/preprocessed.h: 1078
+jon_gui_tracking_color_t = enum_jon_gui_tracking_color# /tmp/binding_gen/preprocessed.h: 1076
 
-# /tmp/binding_gen/preprocessed.h: 1081
+# /tmp/binding_gen/preprocessed.h: 1079
 class struct_anon_37(Structure):
     pass
 
@@ -3657,7 +3657,7 @@ struct_anon_37._fields_ = [
     ('a', uint8_t),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1089
+# /tmp/binding_gen/preprocessed.h: 1087
 class union_jon_gui_color_rgba8888(Union):
     pass
 
@@ -3670,9 +3670,9 @@ union_jon_gui_color_rgba8888._fields_ = [
     ('packed', uint32_t),
 ]
 
-jon_gui_color_rgba8888_t = union_jon_gui_color_rgba8888# /tmp/binding_gen/preprocessed.h: 1089
+jon_gui_color_rgba8888_t = union_jon_gui_color_rgba8888# /tmp/binding_gen/preprocessed.h: 1087
 
-# /tmp/binding_gen/preprocessed.h: 1092
+# /tmp/binding_gen/preprocessed.h: 1090
 class struct_anon_38(Structure):
     pass
 
@@ -3687,7 +3687,7 @@ struct_anon_38._fields_ = [
     ('color_index', uint32_t, 8),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1099
+# /tmp/binding_gen/preprocessed.h: 1097
 class union_jon_gui_tracking_point(Union):
     pass
 
@@ -3700,9 +3700,9 @@ union_jon_gui_tracking_point._fields_ = [
     ('packed', uint32_t),
 ]
 
-jon_gui_tracking_point_t = union_jon_gui_tracking_point# /tmp/binding_gen/preprocessed.h: 1099
+jon_gui_tracking_point_t = union_jon_gui_tracking_point# /tmp/binding_gen/preprocessed.h: 1097
 
-# /tmp/binding_gen/preprocessed.h: 1104
+# /tmp/binding_gen/preprocessed.h: 1102
 class struct_jon_gui_tracking_quad(Structure):
     pass
 
@@ -3715,9 +3715,9 @@ struct_jon_gui_tracking_quad._fields_ = [
     ('p2', jon_gui_tracking_point_t),
 ]
 
-jon_gui_tracking_quad_t = struct_jon_gui_tracking_quad# /tmp/binding_gen/preprocessed.h: 1104
+jon_gui_tracking_quad_t = struct_jon_gui_tracking_quad# /tmp/binding_gen/preprocessed.h: 1102
 
-# /tmp/binding_gen/preprocessed.h: 1117
+# /tmp/binding_gen/preprocessed.h: 1115
 class struct_jon_gui_data_cv(Structure):
     pass
 
@@ -3746,9 +3746,9 @@ struct_jon_gui_data_cv._fields_ = [
     ('tracking_data_heat', jon_gui_tracking_quad_t * int(10)),
 ]
 
-jon_gui_data_cv_t = struct_jon_gui_data_cv# /tmp/binding_gen/preprocessed.h: 1117
+jon_gui_data_cv_t = struct_jon_gui_data_cv# /tmp/binding_gen/preprocessed.h: 1115
 
-# /tmp/binding_gen/preprocessed.h: 1118
+# /tmp/binding_gen/preprocessed.h: 1116
 for _lib in _libs.values():
     try:
         jon_gui_default_state_cv = (jon_gui_data_cv_t).in_dll(_lib, "jon_gui_default_state_cv")
@@ -3756,7 +3756,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 1120
+# /tmp/binding_gen/preprocessed.h: 1118
 for _lib in _libs.values():
     try:
         jon_gui_tracking_colors = (jon_gui_color_rgba8888_t * int(22)).in_dll(_lib, "jon_gui_tracking_colors")
@@ -3764,43 +3764,43 @@ for _lib in _libs.values():
     except:
         pass
 
-enum_anon_39 = c_int# /tmp/binding_gen/preprocessed.h: 1144
+enum_anon_39 = c_int# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_VERTICAL_FOV = 0# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_VERTICAL_FOV = 0# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_HORIZONTAL_FOV = (JON_DEBUG_VERTICAL_FOV + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_HORIZONTAL_FOV = (JON_DEBUG_VERTICAL_FOV + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_AF_PROCESSING_TIME = (JON_DEBUG_HORIZONTAL_FOV + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_AF_PROCESSING_TIME = (JON_DEBUG_HORIZONTAL_FOV + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_TRACKING_PROCESSING_TIME = (JON_DEBUG_AF_PROCESSING_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_TRACKING_PROCESSING_TIME = (JON_DEBUG_AF_PROCESSING_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_FRAME_RATE = (JON_DEBUG_TRACKING_PROCESSING_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_FRAME_RATE = (JON_DEBUG_TRACKING_PROCESSING_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_AF_CONFIDENCE_SCORE = (JON_DEBUG_FRAME_RATE + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_AF_CONFIDENCE_SCORE = (JON_DEBUG_FRAME_RATE + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_TRACKING_CONFIDENCE_SCORE = (JON_DEBUG_AF_CONFIDENCE_SCORE + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_TRACKING_CONFIDENCE_SCORE = (JON_DEBUG_AF_CONFIDENCE_SCORE + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_DETECTED_FACES = (JON_DEBUG_TRACKING_CONFIDENCE_SCORE + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_DETECTED_FACES = (JON_DEBUG_TRACKING_CONFIDENCE_SCORE + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_FACE_DETECTION_TIME = (JON_DEBUG_DETECTED_FACES + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_FACE_DETECTION_TIME = (JON_DEBUG_DETECTED_FACES + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_IMAGE_PREPROCESSING_TIME = (JON_DEBUG_FACE_DETECTION_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_IMAGE_PREPROCESSING_TIME = (JON_DEBUG_FACE_DETECTION_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_FEATURE_EXTRACTION_TIME = (JON_DEBUG_IMAGE_PREPROCESSING_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_FEATURE_EXTRACTION_TIME = (JON_DEBUG_IMAGE_PREPROCESSING_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_AF_ALGORITHM_ITERATIONS = (JON_DEBUG_FEATURE_EXTRACTION_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_AF_ALGORITHM_ITERATIONS = (JON_DEBUG_FEATURE_EXTRACTION_TIME + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_TRACKING_ALGORITHM_ITERATIONS = (JON_DEBUG_AF_ALGORITHM_ITERATIONS + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_TRACKING_ALGORITHM_ITERATIONS = (JON_DEBUG_AF_ALGORITHM_ITERATIONS + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_MEMORY_USAGE = (JON_DEBUG_TRACKING_ALGORITHM_ITERATIONS + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_MEMORY_USAGE = (JON_DEBUG_TRACKING_ALGORITHM_ITERATIONS + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_GPU_UTILIZATION = (JON_DEBUG_MEMORY_USAGE + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_GPU_UTILIZATION = (JON_DEBUG_MEMORY_USAGE + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-JON_DEBUG_LABEL_COUNT = (JON_DEBUG_GPU_UTILIZATION + 1)# /tmp/binding_gen/preprocessed.h: 1144
+JON_DEBUG_LABEL_COUNT = (JON_DEBUG_GPU_UTILIZATION + 1)# /tmp/binding_gen/preprocessed.h: 1142
 
-jon_debug_label_t = enum_anon_39# /tmp/binding_gen/preprocessed.h: 1144
+jon_debug_label_t = enum_anon_39# /tmp/binding_gen/preprocessed.h: 1142
 
-# /tmp/binding_gen/preprocessed.h: 1149
+# /tmp/binding_gen/preprocessed.h: 1147
 class struct_anon_40(Structure):
     pass
 
@@ -3813,9 +3813,9 @@ struct_anon_40._fields_ = [
     ('divider', c_int32),
 ]
 
-jon_debug_info_t = struct_anon_40# /tmp/binding_gen/preprocessed.h: 1149
+jon_debug_info_t = struct_anon_40# /tmp/binding_gen/preprocessed.h: 1147
 
-# /tmp/binding_gen/preprocessed.h: 1154
+# /tmp/binding_gen/preprocessed.h: 1152
 class struct_anon_41(Structure):
     pass
 
@@ -3828,9 +3828,9 @@ struct_anon_41._fields_ = [
     ('display_debug', c_int32),
 ]
 
-jon_gui_data_debug_t = struct_anon_41# /tmp/binding_gen/preprocessed.h: 1154
+jon_gui_data_debug_t = struct_anon_41# /tmp/binding_gen/preprocessed.h: 1152
 
-# /tmp/binding_gen/preprocessed.h: 1155
+# /tmp/binding_gen/preprocessed.h: 1153
 for _lib in _libs.values():
     try:
         jon_gui_default_state_debug = (jon_gui_data_debug_t).in_dll(_lib, "jon_gui_default_state_debug")
@@ -3838,7 +3838,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# /tmp/binding_gen/preprocessed.h: 1156
+# /tmp/binding_gen/preprocessed.h: 1154
 for _lib in _libs.values():
     try:
         jon_debug_info = (jon_debug_info_t * int(JON_DEBUG_LABEL_COUNT)).in_dll(_lib, "jon_debug_info")
@@ -3846,79 +3846,79 @@ for _lib in _libs.values():
     except:
         pass
 
-enum_jon_bool = c_int# /tmp/binding_gen/preprocessed.h: 1161
+enum_jon_bool = c_int# /tmp/binding_gen/preprocessed.h: 1159
 
-jon_false = 0# /tmp/binding_gen/preprocessed.h: 1161
+jon_false = 0# /tmp/binding_gen/preprocessed.h: 1159
 
-jon_true = 1# /tmp/binding_gen/preprocessed.h: 1161
+jon_true = 1# /tmp/binding_gen/preprocessed.h: 1159
 
-jon_bool = enum_jon_bool# /tmp/binding_gen/preprocessed.h: 1161
+jon_bool = enum_jon_bool# /tmp/binding_gen/preprocessed.h: 1159
 
-u_char = __u_char# /tmp/binding_gen/preprocessed.h: 1162
+u_char = __u_char# /tmp/binding_gen/preprocessed.h: 1160
 
-u_short = __u_short# /tmp/binding_gen/preprocessed.h: 1163
+u_short = __u_short# /tmp/binding_gen/preprocessed.h: 1161
 
-u_int = __u_int# /tmp/binding_gen/preprocessed.h: 1164
+u_int = __u_int# /tmp/binding_gen/preprocessed.h: 1162
 
-u_long = __u_long# /tmp/binding_gen/preprocessed.h: 1165
+u_long = __u_long# /tmp/binding_gen/preprocessed.h: 1163
 
-quad_t = __quad_t# /tmp/binding_gen/preprocessed.h: 1166
+quad_t = __quad_t# /tmp/binding_gen/preprocessed.h: 1164
 
-u_quad_t = __u_quad_t# /tmp/binding_gen/preprocessed.h: 1167
+u_quad_t = __u_quad_t# /tmp/binding_gen/preprocessed.h: 1165
 
-fsid_t = __fsid_t# /tmp/binding_gen/preprocessed.h: 1168
+fsid_t = __fsid_t# /tmp/binding_gen/preprocessed.h: 1166
 
-loff_t = __loff_t# /tmp/binding_gen/preprocessed.h: 1169
+loff_t = __loff_t# /tmp/binding_gen/preprocessed.h: 1167
 
-ino_t = __ino_t# /tmp/binding_gen/preprocessed.h: 1170
+ino_t = __ino_t# /tmp/binding_gen/preprocessed.h: 1168
 
-ino64_t = __ino64_t# /tmp/binding_gen/preprocessed.h: 1171
+ino64_t = __ino64_t# /tmp/binding_gen/preprocessed.h: 1169
 
-dev_t = __dev_t# /tmp/binding_gen/preprocessed.h: 1172
+dev_t = __dev_t# /tmp/binding_gen/preprocessed.h: 1170
 
-gid_t = __gid_t# /tmp/binding_gen/preprocessed.h: 1173
+gid_t = __gid_t# /tmp/binding_gen/preprocessed.h: 1171
 
-mode_t = __mode_t# /tmp/binding_gen/preprocessed.h: 1174
+mode_t = __mode_t# /tmp/binding_gen/preprocessed.h: 1172
 
-nlink_t = __nlink_t# /tmp/binding_gen/preprocessed.h: 1175
+nlink_t = __nlink_t# /tmp/binding_gen/preprocessed.h: 1173
 
-uid_t = __uid_t# /tmp/binding_gen/preprocessed.h: 1176
+uid_t = __uid_t# /tmp/binding_gen/preprocessed.h: 1174
 
-off_t = __off_t# /tmp/binding_gen/preprocessed.h: 1177
+off_t = __off_t# /tmp/binding_gen/preprocessed.h: 1175
 
-off64_t = __off64_t# /tmp/binding_gen/preprocessed.h: 1178
+off64_t = __off64_t# /tmp/binding_gen/preprocessed.h: 1176
 
-id_t = __id_t# /tmp/binding_gen/preprocessed.h: 1179
+id_t = __id_t# /tmp/binding_gen/preprocessed.h: 1177
 
-ssize_t = __ssize_t# /tmp/binding_gen/preprocessed.h: 1180
+ssize_t = __ssize_t# /tmp/binding_gen/preprocessed.h: 1178
 
-daddr_t = __daddr_t# /tmp/binding_gen/preprocessed.h: 1181
+daddr_t = __daddr_t# /tmp/binding_gen/preprocessed.h: 1179
 
-caddr_t = __caddr_t# /tmp/binding_gen/preprocessed.h: 1182
+caddr_t = __caddr_t# /tmp/binding_gen/preprocessed.h: 1180
 
-key_t = __key_t# /tmp/binding_gen/preprocessed.h: 1183
+key_t = __key_t# /tmp/binding_gen/preprocessed.h: 1181
 
-useconds_t = __useconds_t# /tmp/binding_gen/preprocessed.h: 1184
+useconds_t = __useconds_t# /tmp/binding_gen/preprocessed.h: 1182
 
-suseconds_t = __suseconds_t# /tmp/binding_gen/preprocessed.h: 1185
+suseconds_t = __suseconds_t# /tmp/binding_gen/preprocessed.h: 1183
 
-ulong = c_ulong# /tmp/binding_gen/preprocessed.h: 1186
+ulong = c_ulong# /tmp/binding_gen/preprocessed.h: 1184
 
-ushort = c_ushort# /tmp/binding_gen/preprocessed.h: 1187
+ushort = c_ushort# /tmp/binding_gen/preprocessed.h: 1185
 
-uint = c_uint# /tmp/binding_gen/preprocessed.h: 1188
+uint = c_uint# /tmp/binding_gen/preprocessed.h: 1186
 
-u_int8_t = __uint8_t# /tmp/binding_gen/preprocessed.h: 1189
+u_int8_t = __uint8_t# /tmp/binding_gen/preprocessed.h: 1187
 
-u_int16_t = __uint16_t# /tmp/binding_gen/preprocessed.h: 1190
+u_int16_t = __uint16_t# /tmp/binding_gen/preprocessed.h: 1188
 
-u_int32_t = __uint32_t# /tmp/binding_gen/preprocessed.h: 1191
+u_int32_t = __uint32_t# /tmp/binding_gen/preprocessed.h: 1189
 
-u_int64_t = __uint64_t# /tmp/binding_gen/preprocessed.h: 1192
+u_int64_t = __uint64_t# /tmp/binding_gen/preprocessed.h: 1190
 
-register_t = c_int# /tmp/binding_gen/preprocessed.h: 1193
+register_t = c_int# /tmp/binding_gen/preprocessed.h: 1191
 
-# /tmp/binding_gen/preprocessed.h: 1227
+# /tmp/binding_gen/preprocessed.h: 1225
 class struct_anon_42(Structure):
     pass
 
@@ -3929,13 +3929,13 @@ struct_anon_42._fields_ = [
     ('__val', c_ulong * int((1024 / (8 * sizeof(c_ulong))))),
 ]
 
-__sigset_t = struct_anon_42# /tmp/binding_gen/preprocessed.h: 1227
+__sigset_t = struct_anon_42# /tmp/binding_gen/preprocessed.h: 1225
 
-sigset_t = __sigset_t# /tmp/binding_gen/preprocessed.h: 1228
+sigset_t = __sigset_t# /tmp/binding_gen/preprocessed.h: 1226
 
-__fd_mask = c_long# /tmp/binding_gen/preprocessed.h: 1229
+__fd_mask = c_long# /tmp/binding_gen/preprocessed.h: 1227
 
-# /tmp/binding_gen/preprocessed.h: 1233
+# /tmp/binding_gen/preprocessed.h: 1231
 class struct_anon_43(Structure):
     pass
 
@@ -3946,37 +3946,37 @@ struct_anon_43._fields_ = [
     ('fds_bits', __fd_mask * int((1024 / (8 * (c_int (ord_if_char(sizeof(__fd_mask)))).value)))),
 ]
 
-fd_set = struct_anon_43# /tmp/binding_gen/preprocessed.h: 1233
+fd_set = struct_anon_43# /tmp/binding_gen/preprocessed.h: 1231
 
-fd_mask = __fd_mask# /tmp/binding_gen/preprocessed.h: 1234
+fd_mask = __fd_mask# /tmp/binding_gen/preprocessed.h: 1232
 
-# /tmp/binding_gen/preprocessed.h: 1235
+# /tmp/binding_gen/preprocessed.h: 1233
 if _libs["libc.so.6"].has("select", "cdecl"):
     select = _libs["libc.so.6"].get("select", "cdecl")
     select.argtypes = [c_int, POINTER(fd_set), POINTER(fd_set), POINTER(fd_set), POINTER(struct_timeval)]
     select.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1239
+# /tmp/binding_gen/preprocessed.h: 1237
 if _libs["libc.so.6"].has("pselect", "cdecl"):
     pselect = _libs["libc.so.6"].get("pselect", "cdecl")
     pselect.argtypes = [c_int, POINTER(fd_set), POINTER(fd_set), POINTER(fd_set), POINTER(struct_timespec), POINTER(__sigset_t)]
     pselect.restype = c_int
 
-blksize_t = __blksize_t# /tmp/binding_gen/preprocessed.h: 1244
+blksize_t = __blksize_t# /tmp/binding_gen/preprocessed.h: 1242
 
-blkcnt_t = __blkcnt_t# /tmp/binding_gen/preprocessed.h: 1245
+blkcnt_t = __blkcnt_t# /tmp/binding_gen/preprocessed.h: 1243
 
-fsblkcnt_t = __fsblkcnt_t# /tmp/binding_gen/preprocessed.h: 1246
+fsblkcnt_t = __fsblkcnt_t# /tmp/binding_gen/preprocessed.h: 1244
 
-fsfilcnt_t = __fsfilcnt_t# /tmp/binding_gen/preprocessed.h: 1247
+fsfilcnt_t = __fsfilcnt_t# /tmp/binding_gen/preprocessed.h: 1245
 
-blkcnt64_t = __blkcnt64_t# /tmp/binding_gen/preprocessed.h: 1248
+blkcnt64_t = __blkcnt64_t# /tmp/binding_gen/preprocessed.h: 1246
 
-fsblkcnt64_t = __fsblkcnt64_t# /tmp/binding_gen/preprocessed.h: 1249
+fsblkcnt64_t = __fsblkcnt64_t# /tmp/binding_gen/preprocessed.h: 1247
 
-fsfilcnt64_t = __fsfilcnt64_t# /tmp/binding_gen/preprocessed.h: 1250
+fsfilcnt64_t = __fsfilcnt64_t# /tmp/binding_gen/preprocessed.h: 1248
 
-# /tmp/binding_gen/preprocessed.h: 1255
+# /tmp/binding_gen/preprocessed.h: 1253
 class struct_anon_44(Structure):
     pass
 
@@ -3989,7 +3989,7 @@ struct_anon_44._fields_ = [
     ('__high', c_uint),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1260
+# /tmp/binding_gen/preprocessed.h: 1258
 class union_anon_45(Union):
     pass
 
@@ -4002,9 +4002,9 @@ union_anon_45._fields_ = [
     ('__value32', struct_anon_44),
 ]
 
-__atomic_wide_counter = union_anon_45# /tmp/binding_gen/preprocessed.h: 1260
+__atomic_wide_counter = union_anon_45# /tmp/binding_gen/preprocessed.h: 1258
 
-# /tmp/binding_gen/preprocessed.h: 1261
+# /tmp/binding_gen/preprocessed.h: 1259
 class struct___pthread_internal_list(Structure):
     pass
 
@@ -4017,9 +4017,9 @@ struct___pthread_internal_list._fields_ = [
     ('__next', POINTER(struct___pthread_internal_list)),
 ]
 
-__pthread_list_t = struct___pthread_internal_list# /tmp/binding_gen/preprocessed.h: 1265
+__pthread_list_t = struct___pthread_internal_list# /tmp/binding_gen/preprocessed.h: 1263
 
-# /tmp/binding_gen/preprocessed.h: 1266
+# /tmp/binding_gen/preprocessed.h: 1264
 class struct___pthread_internal_slist(Structure):
     pass
 
@@ -4030,9 +4030,9 @@ struct___pthread_internal_slist._fields_ = [
     ('__next', POINTER(struct___pthread_internal_slist)),
 ]
 
-__pthread_slist_t = struct___pthread_internal_slist# /tmp/binding_gen/preprocessed.h: 1269
+__pthread_slist_t = struct___pthread_internal_slist# /tmp/binding_gen/preprocessed.h: 1267
 
-# /tmp/binding_gen/preprocessed.h: 1270
+# /tmp/binding_gen/preprocessed.h: 1268
 class struct___pthread_mutex_s(Structure):
     pass
 
@@ -4043,7 +4043,6 @@ struct___pthread_mutex_s.__slots__ = [
     '__nusers',
     '__kind',
     '__spins',
-    '__elision',
     '__list',
 ]
 struct___pthread_mutex_s._fields_ = [
@@ -4052,12 +4051,11 @@ struct___pthread_mutex_s._fields_ = [
     ('__owner', c_int),
     ('__nusers', c_uint),
     ('__kind', c_int),
-    ('__spins', c_short),
-    ('__elision', c_short),
+    ('__spins', c_int),
     ('__list', __pthread_list_t),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1281
+# /tmp/binding_gen/preprocessed.h: 1278
 class struct___pthread_rwlock_arch_t(Structure):
     pass
 
@@ -4070,7 +4068,6 @@ struct___pthread_rwlock_arch_t.__slots__ = [
     '__pad4',
     '__cur_writer',
     '__shared',
-    '__rwelision',
     '__pad1',
     '__pad2',
     '__flags',
@@ -4084,13 +4081,12 @@ struct___pthread_rwlock_arch_t._fields_ = [
     ('__pad4', c_uint),
     ('__cur_writer', c_int),
     ('__shared', c_int),
-    ('__rwelision', c_char),
-    ('__pad1', c_ubyte * int(7)),
+    ('__pad1', c_ulong),
     ('__pad2', c_ulong),
     ('__flags', c_uint),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1296
+# /tmp/binding_gen/preprocessed.h: 1292
 class struct___pthread_cond_s(Structure):
     pass
 
@@ -4113,11 +4109,11 @@ struct___pthread_cond_s._fields_ = [
     ('__g_signals', c_uint * int(2)),
 ]
 
-__tss_t = c_uint# /tmp/binding_gen/preprocessed.h: 1306
+__tss_t = c_uint# /tmp/binding_gen/preprocessed.h: 1302
 
-__thrd_t = c_ulong# /tmp/binding_gen/preprocessed.h: 1307
+__thrd_t = c_ulong# /tmp/binding_gen/preprocessed.h: 1303
 
-# /tmp/binding_gen/preprocessed.h: 1311
+# /tmp/binding_gen/preprocessed.h: 1307
 class struct_anon_46(Structure):
     pass
 
@@ -4128,11 +4124,11 @@ struct_anon_46._fields_ = [
     ('__data', c_int),
 ]
 
-__once_flag = struct_anon_46# /tmp/binding_gen/preprocessed.h: 1311
+__once_flag = struct_anon_46# /tmp/binding_gen/preprocessed.h: 1307
 
-pthread_t = c_ulong# /tmp/binding_gen/preprocessed.h: 1312
+pthread_t = c_ulong# /tmp/binding_gen/preprocessed.h: 1308
 
-# /tmp/binding_gen/preprocessed.h: 1317
+# /tmp/binding_gen/preprocessed.h: 1313
 class union_anon_47(Union):
     pass
 
@@ -4141,13 +4137,13 @@ union_anon_47.__slots__ = [
     '__align',
 ]
 union_anon_47._fields_ = [
-    ('__size', c_char * int(4)),
+    ('__size', c_char * int(8)),
     ('__align', c_int),
 ]
 
-pthread_mutexattr_t = union_anon_47# /tmp/binding_gen/preprocessed.h: 1317
+pthread_mutexattr_t = union_anon_47# /tmp/binding_gen/preprocessed.h: 1313
 
-# /tmp/binding_gen/preprocessed.h: 1322
+# /tmp/binding_gen/preprocessed.h: 1318
 class union_anon_48(Union):
     pass
 
@@ -4156,17 +4152,17 @@ union_anon_48.__slots__ = [
     '__align',
 ]
 union_anon_48._fields_ = [
-    ('__size', c_char * int(4)),
+    ('__size', c_char * int(8)),
     ('__align', c_int),
 ]
 
-pthread_condattr_t = union_anon_48# /tmp/binding_gen/preprocessed.h: 1322
+pthread_condattr_t = union_anon_48# /tmp/binding_gen/preprocessed.h: 1318
 
-pthread_key_t = c_uint# /tmp/binding_gen/preprocessed.h: 1323
+pthread_key_t = c_uint# /tmp/binding_gen/preprocessed.h: 1319
 
-pthread_once_t = c_int# /tmp/binding_gen/preprocessed.h: 1324
+pthread_once_t = c_int# /tmp/binding_gen/preprocessed.h: 1320
 
-# /tmp/binding_gen/preprocessed.h: 1325
+# /tmp/binding_gen/preprocessed.h: 1321
 class union_pthread_attr_t(Union):
     pass
 
@@ -4175,13 +4171,13 @@ union_pthread_attr_t.__slots__ = [
     '__align',
 ]
 union_pthread_attr_t._fields_ = [
-    ('__size', c_char * int(56)),
+    ('__size', c_char * int(64)),
     ('__align', c_long),
 ]
 
-pthread_attr_t = union_pthread_attr_t# /tmp/binding_gen/preprocessed.h: 1330
+pthread_attr_t = union_pthread_attr_t# /tmp/binding_gen/preprocessed.h: 1326
 
-# /tmp/binding_gen/preprocessed.h: 1336
+# /tmp/binding_gen/preprocessed.h: 1332
 class union_anon_49(Union):
     pass
 
@@ -4192,13 +4188,13 @@ union_anon_49.__slots__ = [
 ]
 union_anon_49._fields_ = [
     ('__data', struct___pthread_mutex_s),
-    ('__size', c_char * int(40)),
+    ('__size', c_char * int(48)),
     ('__align', c_long),
 ]
 
-pthread_mutex_t = union_anon_49# /tmp/binding_gen/preprocessed.h: 1336
+pthread_mutex_t = union_anon_49# /tmp/binding_gen/preprocessed.h: 1332
 
-# /tmp/binding_gen/preprocessed.h: 1342
+# /tmp/binding_gen/preprocessed.h: 1338
 class union_anon_50(Union):
     pass
 
@@ -4213,9 +4209,9 @@ union_anon_50._fields_ = [
     ('__align', c_longlong),
 ]
 
-pthread_cond_t = union_anon_50# /tmp/binding_gen/preprocessed.h: 1342
+pthread_cond_t = union_anon_50# /tmp/binding_gen/preprocessed.h: 1338
 
-# /tmp/binding_gen/preprocessed.h: 1348
+# /tmp/binding_gen/preprocessed.h: 1344
 class union_anon_51(Union):
     pass
 
@@ -4230,9 +4226,9 @@ union_anon_51._fields_ = [
     ('__align', c_long),
 ]
 
-pthread_rwlock_t = union_anon_51# /tmp/binding_gen/preprocessed.h: 1348
+pthread_rwlock_t = union_anon_51# /tmp/binding_gen/preprocessed.h: 1344
 
-# /tmp/binding_gen/preprocessed.h: 1353
+# /tmp/binding_gen/preprocessed.h: 1349
 class union_anon_52(Union):
     pass
 
@@ -4245,11 +4241,11 @@ union_anon_52._fields_ = [
     ('__align', c_long),
 ]
 
-pthread_rwlockattr_t = union_anon_52# /tmp/binding_gen/preprocessed.h: 1353
+pthread_rwlockattr_t = union_anon_52# /tmp/binding_gen/preprocessed.h: 1349
 
-pthread_spinlock_t = c_int# /tmp/binding_gen/preprocessed.h: 1354
+pthread_spinlock_t = c_int# /tmp/binding_gen/preprocessed.h: 1350
 
-# /tmp/binding_gen/preprocessed.h: 1359
+# /tmp/binding_gen/preprocessed.h: 1355
 class union_anon_53(Union):
     pass
 
@@ -4262,9 +4258,9 @@ union_anon_53._fields_ = [
     ('__align', c_long),
 ]
 
-pthread_barrier_t = union_anon_53# /tmp/binding_gen/preprocessed.h: 1359
+pthread_barrier_t = union_anon_53# /tmp/binding_gen/preprocessed.h: 1355
 
-# /tmp/binding_gen/preprocessed.h: 1364
+# /tmp/binding_gen/preprocessed.h: 1360
 class union_anon_54(Union):
     pass
 
@@ -4273,13 +4269,13 @@ union_anon_54.__slots__ = [
     '__align',
 ]
 union_anon_54._fields_ = [
-    ('__size', c_char * int(4)),
+    ('__size', c_char * int(8)),
     ('__align', c_int),
 ]
 
-pthread_barrierattr_t = union_anon_54# /tmp/binding_gen/preprocessed.h: 1364
+pthread_barrierattr_t = union_anon_54# /tmp/binding_gen/preprocessed.h: 1360
 
-# /tmp/binding_gen/preprocessed.h: 1366
+# /tmp/binding_gen/preprocessed.h: 1362
 class struct_sched_param(Structure):
     pass
 
@@ -4290,7 +4286,7 @@ struct_sched_param._fields_ = [
     ('sched_priority', c_int),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1370
+# /tmp/binding_gen/preprocessed.h: 1366
 if _libs["libc.so.6"].has("clone", "cdecl"):
     _func = _libs["libc.so.6"].get("clone", "cdecl")
     _restype = c_int
@@ -4298,33 +4294,33 @@ if _libs["libc.so.6"].has("clone", "cdecl"):
     _argtypes = [CFUNCTYPE(UNCHECKED(c_int), POINTER(None)), POINTER(None), c_int, POINTER(None)]
     clone = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# /tmp/binding_gen/preprocessed.h: 1372
+# /tmp/binding_gen/preprocessed.h: 1368
 if _libs["libc.so.6"].has("unshare", "cdecl"):
     unshare = _libs["libc.so.6"].get("unshare", "cdecl")
     unshare.argtypes = [c_int]
     unshare.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1373
+# /tmp/binding_gen/preprocessed.h: 1369
 if _libs["libc.so.6"].has("sched_getcpu", "cdecl"):
     sched_getcpu = _libs["libc.so.6"].get("sched_getcpu", "cdecl")
     sched_getcpu.argtypes = []
     sched_getcpu.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1374
+# /tmp/binding_gen/preprocessed.h: 1370
 if _libs["libc.so.6"].has("getcpu", "cdecl"):
     getcpu = _libs["libc.so.6"].get("getcpu", "cdecl")
     getcpu.argtypes = [POINTER(c_uint), POINTER(c_uint)]
     getcpu.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1375
+# /tmp/binding_gen/preprocessed.h: 1371
 if _libs["libc.so.6"].has("setns", "cdecl"):
     setns = _libs["libc.so.6"].get("setns", "cdecl")
     setns.argtypes = [c_int, c_int]
     setns.restype = c_int
 
-__cpu_mask = c_ulong# /tmp/binding_gen/preprocessed.h: 1376
+__cpu_mask = c_ulong# /tmp/binding_gen/preprocessed.h: 1372
 
-# /tmp/binding_gen/preprocessed.h: 1380
+# /tmp/binding_gen/preprocessed.h: 1376
 class struct_anon_55(Structure):
     pass
 
@@ -4335,89 +4331,89 @@ struct_anon_55._fields_ = [
     ('__bits', __cpu_mask * int((1024 / (8 * sizeof(__cpu_mask))))),
 ]
 
-cpu_set_t = struct_anon_55# /tmp/binding_gen/preprocessed.h: 1380
+cpu_set_t = struct_anon_55# /tmp/binding_gen/preprocessed.h: 1376
 
-# /tmp/binding_gen/preprocessed.h: 1381
+# /tmp/binding_gen/preprocessed.h: 1377
 if _libs["libc.so.6"].has("__sched_cpucount", "cdecl"):
     __sched_cpucount = _libs["libc.so.6"].get("__sched_cpucount", "cdecl")
     __sched_cpucount.argtypes = [c_size_t, POINTER(cpu_set_t)]
     __sched_cpucount.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1383
+# /tmp/binding_gen/preprocessed.h: 1379
 if _libs["libc.so.6"].has("__sched_cpualloc", "cdecl"):
     __sched_cpualloc = _libs["libc.so.6"].get("__sched_cpualloc", "cdecl")
     __sched_cpualloc.argtypes = [c_size_t]
     __sched_cpualloc.restype = POINTER(cpu_set_t)
 
-# /tmp/binding_gen/preprocessed.h: 1384
+# /tmp/binding_gen/preprocessed.h: 1380
 if _libs["libc.so.6"].has("__sched_cpufree", "cdecl"):
     __sched_cpufree = _libs["libc.so.6"].get("__sched_cpufree", "cdecl")
     __sched_cpufree.argtypes = [POINTER(cpu_set_t)]
     __sched_cpufree.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1385
+# /tmp/binding_gen/preprocessed.h: 1381
 if _libs["libc.so.6"].has("sched_setparam", "cdecl"):
     sched_setparam = _libs["libc.so.6"].get("sched_setparam", "cdecl")
     sched_setparam.argtypes = [__pid_t, POINTER(struct_sched_param)]
     sched_setparam.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1387
+# /tmp/binding_gen/preprocessed.h: 1383
 if _libs["libc.so.6"].has("sched_getparam", "cdecl"):
     sched_getparam = _libs["libc.so.6"].get("sched_getparam", "cdecl")
     sched_getparam.argtypes = [__pid_t, POINTER(struct_sched_param)]
     sched_getparam.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1388
+# /tmp/binding_gen/preprocessed.h: 1384
 if _libs["libc.so.6"].has("sched_setscheduler", "cdecl"):
     sched_setscheduler = _libs["libc.so.6"].get("sched_setscheduler", "cdecl")
     sched_setscheduler.argtypes = [__pid_t, c_int, POINTER(struct_sched_param)]
     sched_setscheduler.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1390
+# /tmp/binding_gen/preprocessed.h: 1386
 if _libs["libc.so.6"].has("sched_getscheduler", "cdecl"):
     sched_getscheduler = _libs["libc.so.6"].get("sched_getscheduler", "cdecl")
     sched_getscheduler.argtypes = [__pid_t]
     sched_getscheduler.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1391
+# /tmp/binding_gen/preprocessed.h: 1387
 if _libs["libc.so.6"].has("sched_yield", "cdecl"):
     sched_yield = _libs["libc.so.6"].get("sched_yield", "cdecl")
     sched_yield.argtypes = []
     sched_yield.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1392
+# /tmp/binding_gen/preprocessed.h: 1388
 if _libs["libc.so.6"].has("sched_get_priority_max", "cdecl"):
     sched_get_priority_max = _libs["libc.so.6"].get("sched_get_priority_max", "cdecl")
     sched_get_priority_max.argtypes = [c_int]
     sched_get_priority_max.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1393
+# /tmp/binding_gen/preprocessed.h: 1389
 if _libs["libc.so.6"].has("sched_get_priority_min", "cdecl"):
     sched_get_priority_min = _libs["libc.so.6"].get("sched_get_priority_min", "cdecl")
     sched_get_priority_min.argtypes = [c_int]
     sched_get_priority_min.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1394
+# /tmp/binding_gen/preprocessed.h: 1390
 if _libs["libc.so.6"].has("sched_rr_get_interval", "cdecl"):
     sched_rr_get_interval = _libs["libc.so.6"].get("sched_rr_get_interval", "cdecl")
     sched_rr_get_interval.argtypes = [__pid_t, POINTER(struct_timespec)]
     sched_rr_get_interval.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1395
+# /tmp/binding_gen/preprocessed.h: 1391
 if _libs["libc.so.6"].has("sched_setaffinity", "cdecl"):
     sched_setaffinity = _libs["libc.so.6"].get("sched_setaffinity", "cdecl")
     sched_setaffinity.argtypes = [__pid_t, c_size_t, POINTER(cpu_set_t)]
     sched_setaffinity.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1397
+# /tmp/binding_gen/preprocessed.h: 1393
 if _libs["libc.so.6"].has("sched_getaffinity", "cdecl"):
     sched_getaffinity = _libs["libc.so.6"].get("sched_getaffinity", "cdecl")
     sched_getaffinity.argtypes = [__pid_t, c_size_t, POINTER(cpu_set_t)]
     sched_getaffinity.restype = c_int
 
-__jmp_buf = c_long * int(8)# /tmp/binding_gen/preprocessed.h: 1399
+__jmp_buf = c_ulonglong * int(22)# /tmp/binding_gen/preprocessed.h: 1395
 
-# /tmp/binding_gen/preprocessed.h: 1400
+# /tmp/binding_gen/preprocessed.h: 1396
 class struct___jmp_buf_tag(Structure):
     pass
 
@@ -4432,85 +4428,85 @@ struct___jmp_buf_tag._fields_ = [
     ('__saved_mask', __sigset_t),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1407
+# /tmp/binding_gen/preprocessed.h: 1403
 if _libs["libc.so.6"].has("__sysconf", "cdecl"):
     __sysconf = _libs["libc.so.6"].get("__sysconf", "cdecl")
     __sysconf.argtypes = [c_int]
     __sysconf.restype = c_long
 
-enum_anon_56 = c_int# /tmp/binding_gen/preprocessed.h: 1408
+enum_anon_56 = c_int# /tmp/binding_gen/preprocessed.h: 1404
 
-PTHREAD_CREATE_JOINABLE = 0# /tmp/binding_gen/preprocessed.h: 1408
+PTHREAD_CREATE_JOINABLE = 0# /tmp/binding_gen/preprocessed.h: 1404
 
-PTHREAD_CREATE_DETACHED = (PTHREAD_CREATE_JOINABLE + 1)# /tmp/binding_gen/preprocessed.h: 1408
+PTHREAD_CREATE_DETACHED = (PTHREAD_CREATE_JOINABLE + 1)# /tmp/binding_gen/preprocessed.h: 1404
 
-enum_anon_57 = c_int# /tmp/binding_gen/preprocessed.h: 1413
+enum_anon_57 = c_int# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_TIMED_NP = 0# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_TIMED_NP = 0# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_RECURSIVE_NP = (PTHREAD_MUTEX_TIMED_NP + 1)# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_RECURSIVE_NP = (PTHREAD_MUTEX_TIMED_NP + 1)# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_ERRORCHECK_NP = (PTHREAD_MUTEX_RECURSIVE_NP + 1)# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_ERRORCHECK_NP = (PTHREAD_MUTEX_RECURSIVE_NP + 1)# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_ADAPTIVE_NP = (PTHREAD_MUTEX_ERRORCHECK_NP + 1)# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_ADAPTIVE_NP = (PTHREAD_MUTEX_ERRORCHECK_NP + 1)# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_NORMAL = PTHREAD_MUTEX_TIMED_NP# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_NORMAL = PTHREAD_MUTEX_TIMED_NP# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_RECURSIVE = PTHREAD_MUTEX_RECURSIVE_NP# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_RECURSIVE = PTHREAD_MUTEX_RECURSIVE_NP# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_ERRORCHECK = PTHREAD_MUTEX_ERRORCHECK_NP# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_ERRORCHECK = PTHREAD_MUTEX_ERRORCHECK_NP# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_DEFAULT = PTHREAD_MUTEX_NORMAL# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_DEFAULT = PTHREAD_MUTEX_NORMAL# /tmp/binding_gen/preprocessed.h: 1409
 
-PTHREAD_MUTEX_FAST_NP = PTHREAD_MUTEX_TIMED_NP# /tmp/binding_gen/preprocessed.h: 1413
+PTHREAD_MUTEX_FAST_NP = PTHREAD_MUTEX_TIMED_NP# /tmp/binding_gen/preprocessed.h: 1409
 
-enum_anon_58 = c_int# /tmp/binding_gen/preprocessed.h: 1426
+enum_anon_58 = c_int# /tmp/binding_gen/preprocessed.h: 1422
 
-PTHREAD_MUTEX_STALLED = 0# /tmp/binding_gen/preprocessed.h: 1426
+PTHREAD_MUTEX_STALLED = 0# /tmp/binding_gen/preprocessed.h: 1422
 
-PTHREAD_MUTEX_STALLED_NP = PTHREAD_MUTEX_STALLED# /tmp/binding_gen/preprocessed.h: 1426
+PTHREAD_MUTEX_STALLED_NP = PTHREAD_MUTEX_STALLED# /tmp/binding_gen/preprocessed.h: 1422
 
-PTHREAD_MUTEX_ROBUST = (PTHREAD_MUTEX_STALLED_NP + 1)# /tmp/binding_gen/preprocessed.h: 1426
+PTHREAD_MUTEX_ROBUST = (PTHREAD_MUTEX_STALLED_NP + 1)# /tmp/binding_gen/preprocessed.h: 1422
 
-PTHREAD_MUTEX_ROBUST_NP = PTHREAD_MUTEX_ROBUST# /tmp/binding_gen/preprocessed.h: 1426
+PTHREAD_MUTEX_ROBUST_NP = PTHREAD_MUTEX_ROBUST# /tmp/binding_gen/preprocessed.h: 1422
 
-enum_anon_59 = c_int# /tmp/binding_gen/preprocessed.h: 1433
+enum_anon_59 = c_int# /tmp/binding_gen/preprocessed.h: 1429
 
-PTHREAD_PRIO_NONE = 0# /tmp/binding_gen/preprocessed.h: 1433
+PTHREAD_PRIO_NONE = 0# /tmp/binding_gen/preprocessed.h: 1429
 
-PTHREAD_PRIO_INHERIT = (PTHREAD_PRIO_NONE + 1)# /tmp/binding_gen/preprocessed.h: 1433
+PTHREAD_PRIO_INHERIT = (PTHREAD_PRIO_NONE + 1)# /tmp/binding_gen/preprocessed.h: 1429
 
-PTHREAD_PRIO_PROTECT = (PTHREAD_PRIO_INHERIT + 1)# /tmp/binding_gen/preprocessed.h: 1433
+PTHREAD_PRIO_PROTECT = (PTHREAD_PRIO_INHERIT + 1)# /tmp/binding_gen/preprocessed.h: 1429
 
-enum_anon_60 = c_int# /tmp/binding_gen/preprocessed.h: 1439
+enum_anon_60 = c_int# /tmp/binding_gen/preprocessed.h: 1435
 
-PTHREAD_RWLOCK_PREFER_READER_NP = 0# /tmp/binding_gen/preprocessed.h: 1439
+PTHREAD_RWLOCK_PREFER_READER_NP = 0# /tmp/binding_gen/preprocessed.h: 1435
 
-PTHREAD_RWLOCK_PREFER_WRITER_NP = (PTHREAD_RWLOCK_PREFER_READER_NP + 1)# /tmp/binding_gen/preprocessed.h: 1439
+PTHREAD_RWLOCK_PREFER_WRITER_NP = (PTHREAD_RWLOCK_PREFER_READER_NP + 1)# /tmp/binding_gen/preprocessed.h: 1435
 
-PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP = (PTHREAD_RWLOCK_PREFER_WRITER_NP + 1)# /tmp/binding_gen/preprocessed.h: 1439
+PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP = (PTHREAD_RWLOCK_PREFER_WRITER_NP + 1)# /tmp/binding_gen/preprocessed.h: 1435
 
-PTHREAD_RWLOCK_DEFAULT_NP = PTHREAD_RWLOCK_PREFER_READER_NP# /tmp/binding_gen/preprocessed.h: 1439
+PTHREAD_RWLOCK_DEFAULT_NP = PTHREAD_RWLOCK_PREFER_READER_NP# /tmp/binding_gen/preprocessed.h: 1435
 
-enum_anon_61 = c_int# /tmp/binding_gen/preprocessed.h: 1446
+enum_anon_61 = c_int# /tmp/binding_gen/preprocessed.h: 1442
 
-PTHREAD_INHERIT_SCHED = 0# /tmp/binding_gen/preprocessed.h: 1446
+PTHREAD_INHERIT_SCHED = 0# /tmp/binding_gen/preprocessed.h: 1442
 
-PTHREAD_EXPLICIT_SCHED = (PTHREAD_INHERIT_SCHED + 1)# /tmp/binding_gen/preprocessed.h: 1446
+PTHREAD_EXPLICIT_SCHED = (PTHREAD_INHERIT_SCHED + 1)# /tmp/binding_gen/preprocessed.h: 1442
 
-enum_anon_62 = c_int# /tmp/binding_gen/preprocessed.h: 1451
+enum_anon_62 = c_int# /tmp/binding_gen/preprocessed.h: 1447
 
-PTHREAD_SCOPE_SYSTEM = 0# /tmp/binding_gen/preprocessed.h: 1451
+PTHREAD_SCOPE_SYSTEM = 0# /tmp/binding_gen/preprocessed.h: 1447
 
-PTHREAD_SCOPE_PROCESS = (PTHREAD_SCOPE_SYSTEM + 1)# /tmp/binding_gen/preprocessed.h: 1451
+PTHREAD_SCOPE_PROCESS = (PTHREAD_SCOPE_SYSTEM + 1)# /tmp/binding_gen/preprocessed.h: 1447
 
-enum_anon_63 = c_int# /tmp/binding_gen/preprocessed.h: 1456
+enum_anon_63 = c_int# /tmp/binding_gen/preprocessed.h: 1452
 
-PTHREAD_PROCESS_PRIVATE = 0# /tmp/binding_gen/preprocessed.h: 1456
+PTHREAD_PROCESS_PRIVATE = 0# /tmp/binding_gen/preprocessed.h: 1452
 
-PTHREAD_PROCESS_SHARED = (PTHREAD_PROCESS_PRIVATE + 1)# /tmp/binding_gen/preprocessed.h: 1456
+PTHREAD_PROCESS_SHARED = (PTHREAD_PROCESS_PRIVATE + 1)# /tmp/binding_gen/preprocessed.h: 1452
 
-# /tmp/binding_gen/preprocessed.h: 1461
+# /tmp/binding_gen/preprocessed.h: 1457
 class struct__pthread_cleanup_buffer(Structure):
     pass
 
@@ -4527,277 +4523,277 @@ struct__pthread_cleanup_buffer._fields_ = [
     ('__prev', POINTER(struct__pthread_cleanup_buffer)),
 ]
 
-enum_anon_64 = c_int# /tmp/binding_gen/preprocessed.h: 1468
+enum_anon_64 = c_int# /tmp/binding_gen/preprocessed.h: 1464
 
-PTHREAD_CANCEL_ENABLE = 0# /tmp/binding_gen/preprocessed.h: 1468
+PTHREAD_CANCEL_ENABLE = 0# /tmp/binding_gen/preprocessed.h: 1464
 
-PTHREAD_CANCEL_DISABLE = (PTHREAD_CANCEL_ENABLE + 1)# /tmp/binding_gen/preprocessed.h: 1468
+PTHREAD_CANCEL_DISABLE = (PTHREAD_CANCEL_ENABLE + 1)# /tmp/binding_gen/preprocessed.h: 1464
 
-enum_anon_65 = c_int# /tmp/binding_gen/preprocessed.h: 1473
+enum_anon_65 = c_int# /tmp/binding_gen/preprocessed.h: 1469
 
-PTHREAD_CANCEL_DEFERRED = 0# /tmp/binding_gen/preprocessed.h: 1473
+PTHREAD_CANCEL_DEFERRED = 0# /tmp/binding_gen/preprocessed.h: 1469
 
-PTHREAD_CANCEL_ASYNCHRONOUS = (PTHREAD_CANCEL_DEFERRED + 1)# /tmp/binding_gen/preprocessed.h: 1473
+PTHREAD_CANCEL_ASYNCHRONOUS = (PTHREAD_CANCEL_DEFERRED + 1)# /tmp/binding_gen/preprocessed.h: 1469
 
-# /tmp/binding_gen/preprocessed.h: 1478
+# /tmp/binding_gen/preprocessed.h: 1474
 if _libs["libc.so.6"].has("pthread_create", "cdecl"):
     pthread_create = _libs["libc.so.6"].get("pthread_create", "cdecl")
     pthread_create.argtypes = [POINTER(pthread_t), POINTER(pthread_attr_t), CFUNCTYPE(UNCHECKED(POINTER(c_ubyte)), POINTER(None)), POINTER(None)]
     pthread_create.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1482
+# /tmp/binding_gen/preprocessed.h: 1478
 if _libs["libc.so.6"].has("pthread_exit", "cdecl"):
     pthread_exit = _libs["libc.so.6"].get("pthread_exit", "cdecl")
     pthread_exit.argtypes = [POINTER(None)]
     pthread_exit.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1483
+# /tmp/binding_gen/preprocessed.h: 1479
 if _libs["libc.so.6"].has("pthread_join", "cdecl"):
     pthread_join = _libs["libc.so.6"].get("pthread_join", "cdecl")
     pthread_join.argtypes = [pthread_t, POINTER(POINTER(None))]
     pthread_join.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1484
+# /tmp/binding_gen/preprocessed.h: 1480
 if _libs["libc.so.6"].has("pthread_tryjoin_np", "cdecl"):
     pthread_tryjoin_np = _libs["libc.so.6"].get("pthread_tryjoin_np", "cdecl")
     pthread_tryjoin_np.argtypes = [pthread_t, POINTER(POINTER(None))]
     pthread_tryjoin_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1485
+# /tmp/binding_gen/preprocessed.h: 1481
 if _libs["libc.so.6"].has("pthread_timedjoin_np", "cdecl"):
     pthread_timedjoin_np = _libs["libc.so.6"].get("pthread_timedjoin_np", "cdecl")
     pthread_timedjoin_np.argtypes = [pthread_t, POINTER(POINTER(None)), POINTER(struct_timespec)]
     pthread_timedjoin_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1487
+# /tmp/binding_gen/preprocessed.h: 1483
 if _libs["libc.so.6"].has("pthread_clockjoin_np", "cdecl"):
     pthread_clockjoin_np = _libs["libc.so.6"].get("pthread_clockjoin_np", "cdecl")
     pthread_clockjoin_np.argtypes = [pthread_t, POINTER(POINTER(None)), clockid_t, POINTER(struct_timespec)]
     pthread_clockjoin_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1490
+# /tmp/binding_gen/preprocessed.h: 1486
 if _libs["libc.so.6"].has("pthread_detach", "cdecl"):
     pthread_detach = _libs["libc.so.6"].get("pthread_detach", "cdecl")
     pthread_detach.argtypes = [pthread_t]
     pthread_detach.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1491
+# /tmp/binding_gen/preprocessed.h: 1487
 if _libs["libc.so.6"].has("pthread_self", "cdecl"):
     pthread_self = _libs["libc.so.6"].get("pthread_self", "cdecl")
     pthread_self.argtypes = []
     pthread_self.restype = pthread_t
 
-# /tmp/binding_gen/preprocessed.h: 1492
+# /tmp/binding_gen/preprocessed.h: 1488
 if _libs["libc.so.6"].has("pthread_equal", "cdecl"):
     pthread_equal = _libs["libc.so.6"].get("pthread_equal", "cdecl")
     pthread_equal.argtypes = [pthread_t, pthread_t]
     pthread_equal.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1494
+# /tmp/binding_gen/preprocessed.h: 1490
 if _libs["libc.so.6"].has("pthread_attr_init", "cdecl"):
     pthread_attr_init = _libs["libc.so.6"].get("pthread_attr_init", "cdecl")
     pthread_attr_init.argtypes = [POINTER(pthread_attr_t)]
     pthread_attr_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1495
+# /tmp/binding_gen/preprocessed.h: 1491
 if _libs["libc.so.6"].has("pthread_attr_destroy", "cdecl"):
     pthread_attr_destroy = _libs["libc.so.6"].get("pthread_attr_destroy", "cdecl")
     pthread_attr_destroy.argtypes = [POINTER(pthread_attr_t)]
     pthread_attr_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1497
+# /tmp/binding_gen/preprocessed.h: 1493
 if _libs["libc.so.6"].has("pthread_attr_getdetachstate", "cdecl"):
     pthread_attr_getdetachstate = _libs["libc.so.6"].get("pthread_attr_getdetachstate", "cdecl")
     pthread_attr_getdetachstate.argtypes = [POINTER(pthread_attr_t), POINTER(c_int)]
     pthread_attr_getdetachstate.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1500
+# /tmp/binding_gen/preprocessed.h: 1496
 if _libs["libc.so.6"].has("pthread_attr_setdetachstate", "cdecl"):
     pthread_attr_setdetachstate = _libs["libc.so.6"].get("pthread_attr_setdetachstate", "cdecl")
     pthread_attr_setdetachstate.argtypes = [POINTER(pthread_attr_t), c_int]
     pthread_attr_setdetachstate.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1503
+# /tmp/binding_gen/preprocessed.h: 1499
 if _libs["libc.so.6"].has("pthread_attr_getguardsize", "cdecl"):
     pthread_attr_getguardsize = _libs["libc.so.6"].get("pthread_attr_getguardsize", "cdecl")
     pthread_attr_getguardsize.argtypes = [POINTER(pthread_attr_t), POINTER(c_size_t)]
     pthread_attr_getguardsize.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1506
+# /tmp/binding_gen/preprocessed.h: 1502
 if _libs["libc.so.6"].has("pthread_attr_setguardsize", "cdecl"):
     pthread_attr_setguardsize = _libs["libc.so.6"].get("pthread_attr_setguardsize", "cdecl")
     pthread_attr_setguardsize.argtypes = [POINTER(pthread_attr_t), c_size_t]
     pthread_attr_setguardsize.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1509
+# /tmp/binding_gen/preprocessed.h: 1505
 if _libs["libc.so.6"].has("pthread_attr_getschedparam", "cdecl"):
     pthread_attr_getschedparam = _libs["libc.so.6"].get("pthread_attr_getschedparam", "cdecl")
     pthread_attr_getschedparam.argtypes = [POINTER(pthread_attr_t), POINTER(struct_sched_param)]
     pthread_attr_getschedparam.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1512
+# /tmp/binding_gen/preprocessed.h: 1508
 if _libs["libc.so.6"].has("pthread_attr_setschedparam", "cdecl"):
     pthread_attr_setschedparam = _libs["libc.so.6"].get("pthread_attr_setschedparam", "cdecl")
     pthread_attr_setschedparam.argtypes = [POINTER(pthread_attr_t), POINTER(struct_sched_param)]
     pthread_attr_setschedparam.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1515
+# /tmp/binding_gen/preprocessed.h: 1511
 if _libs["libc.so.6"].has("pthread_attr_getschedpolicy", "cdecl"):
     pthread_attr_getschedpolicy = _libs["libc.so.6"].get("pthread_attr_getschedpolicy", "cdecl")
     pthread_attr_getschedpolicy.argtypes = [POINTER(pthread_attr_t), POINTER(c_int)]
     pthread_attr_getschedpolicy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1518
+# /tmp/binding_gen/preprocessed.h: 1514
 if _libs["libc.so.6"].has("pthread_attr_setschedpolicy", "cdecl"):
     pthread_attr_setschedpolicy = _libs["libc.so.6"].get("pthread_attr_setschedpolicy", "cdecl")
     pthread_attr_setschedpolicy.argtypes = [POINTER(pthread_attr_t), c_int]
     pthread_attr_setschedpolicy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1520
+# /tmp/binding_gen/preprocessed.h: 1516
 if _libs["libc.so.6"].has("pthread_attr_getinheritsched", "cdecl"):
     pthread_attr_getinheritsched = _libs["libc.so.6"].get("pthread_attr_getinheritsched", "cdecl")
     pthread_attr_getinheritsched.argtypes = [POINTER(pthread_attr_t), POINTER(c_int)]
     pthread_attr_getinheritsched.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1523
+# /tmp/binding_gen/preprocessed.h: 1519
 if _libs["libc.so.6"].has("pthread_attr_setinheritsched", "cdecl"):
     pthread_attr_setinheritsched = _libs["libc.so.6"].get("pthread_attr_setinheritsched", "cdecl")
     pthread_attr_setinheritsched.argtypes = [POINTER(pthread_attr_t), c_int]
     pthread_attr_setinheritsched.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1526
+# /tmp/binding_gen/preprocessed.h: 1522
 if _libs["libc.so.6"].has("pthread_attr_getscope", "cdecl"):
     pthread_attr_getscope = _libs["libc.so.6"].get("pthread_attr_getscope", "cdecl")
     pthread_attr_getscope.argtypes = [POINTER(pthread_attr_t), POINTER(c_int)]
     pthread_attr_getscope.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1529
+# /tmp/binding_gen/preprocessed.h: 1525
 if _libs["libc.so.6"].has("pthread_attr_setscope", "cdecl"):
     pthread_attr_setscope = _libs["libc.so.6"].get("pthread_attr_setscope", "cdecl")
     pthread_attr_setscope.argtypes = [POINTER(pthread_attr_t), c_int]
     pthread_attr_setscope.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1531
+# /tmp/binding_gen/preprocessed.h: 1527
 if _libs["libc.so.6"].has("pthread_attr_getstackaddr", "cdecl"):
     pthread_attr_getstackaddr = _libs["libc.so.6"].get("pthread_attr_getstackaddr", "cdecl")
     pthread_attr_getstackaddr.argtypes = [POINTER(pthread_attr_t), POINTER(POINTER(None))]
     pthread_attr_getstackaddr.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1534
+# /tmp/binding_gen/preprocessed.h: 1530
 if _libs["libc.so.6"].has("pthread_attr_setstackaddr", "cdecl"):
     pthread_attr_setstackaddr = _libs["libc.so.6"].get("pthread_attr_setstackaddr", "cdecl")
     pthread_attr_setstackaddr.argtypes = [POINTER(pthread_attr_t), POINTER(None)]
     pthread_attr_setstackaddr.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1537
+# /tmp/binding_gen/preprocessed.h: 1533
 if _libs["libc.so.6"].has("pthread_attr_getstacksize", "cdecl"):
     pthread_attr_getstacksize = _libs["libc.so.6"].get("pthread_attr_getstacksize", "cdecl")
     pthread_attr_getstacksize.argtypes = [POINTER(pthread_attr_t), POINTER(c_size_t)]
     pthread_attr_getstacksize.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1540
+# /tmp/binding_gen/preprocessed.h: 1536
 if _libs["libc.so.6"].has("pthread_attr_setstacksize", "cdecl"):
     pthread_attr_setstacksize = _libs["libc.so.6"].get("pthread_attr_setstacksize", "cdecl")
     pthread_attr_setstacksize.argtypes = [POINTER(pthread_attr_t), c_size_t]
     pthread_attr_setstacksize.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1543
+# /tmp/binding_gen/preprocessed.h: 1539
 if _libs["libc.so.6"].has("pthread_attr_getstack", "cdecl"):
     pthread_attr_getstack = _libs["libc.so.6"].get("pthread_attr_getstack", "cdecl")
     pthread_attr_getstack.argtypes = [POINTER(pthread_attr_t), POINTER(POINTER(None)), POINTER(c_size_t)]
     pthread_attr_getstack.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1547
+# /tmp/binding_gen/preprocessed.h: 1543
 if _libs["libc.so.6"].has("pthread_attr_setstack", "cdecl"):
     pthread_attr_setstack = _libs["libc.so.6"].get("pthread_attr_setstack", "cdecl")
     pthread_attr_setstack.argtypes = [POINTER(pthread_attr_t), POINTER(None), c_size_t]
     pthread_attr_setstack.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1549
+# /tmp/binding_gen/preprocessed.h: 1545
 if _libs["libc.so.6"].has("pthread_attr_setaffinity_np", "cdecl"):
     pthread_attr_setaffinity_np = _libs["libc.so.6"].get("pthread_attr_setaffinity_np", "cdecl")
     pthread_attr_setaffinity_np.argtypes = [POINTER(pthread_attr_t), c_size_t, POINTER(cpu_set_t)]
     pthread_attr_setaffinity_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1553
+# /tmp/binding_gen/preprocessed.h: 1549
 if _libs["libc.so.6"].has("pthread_attr_getaffinity_np", "cdecl"):
     pthread_attr_getaffinity_np = _libs["libc.so.6"].get("pthread_attr_getaffinity_np", "cdecl")
     pthread_attr_getaffinity_np.argtypes = [POINTER(pthread_attr_t), c_size_t, POINTER(cpu_set_t)]
     pthread_attr_getaffinity_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1557
+# /tmp/binding_gen/preprocessed.h: 1553
 if _libs["libc.so.6"].has("pthread_getattr_default_np", "cdecl"):
     pthread_getattr_default_np = _libs["libc.so.6"].get("pthread_getattr_default_np", "cdecl")
     pthread_getattr_default_np.argtypes = [POINTER(pthread_attr_t)]
     pthread_getattr_default_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1559
+# /tmp/binding_gen/preprocessed.h: 1555
 if _libs["libc.so.6"].has("pthread_attr_setsigmask_np", "cdecl"):
     pthread_attr_setsigmask_np = _libs["libc.so.6"].get("pthread_attr_setsigmask_np", "cdecl")
     pthread_attr_setsigmask_np.argtypes = [POINTER(pthread_attr_t), POINTER(__sigset_t)]
     pthread_attr_setsigmask_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1561
+# /tmp/binding_gen/preprocessed.h: 1557
 if _libs["libc.so.6"].has("pthread_attr_getsigmask_np", "cdecl"):
     pthread_attr_getsigmask_np = _libs["libc.so.6"].get("pthread_attr_getsigmask_np", "cdecl")
     pthread_attr_getsigmask_np.argtypes = [POINTER(pthread_attr_t), POINTER(__sigset_t)]
     pthread_attr_getsigmask_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1563
+# /tmp/binding_gen/preprocessed.h: 1559
 if _libs["libc.so.6"].has("pthread_setattr_default_np", "cdecl"):
     pthread_setattr_default_np = _libs["libc.so.6"].get("pthread_setattr_default_np", "cdecl")
     pthread_setattr_default_np.argtypes = [POINTER(pthread_attr_t)]
     pthread_setattr_default_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1565
+# /tmp/binding_gen/preprocessed.h: 1561
 if _libs["libc.so.6"].has("pthread_getattr_np", "cdecl"):
     pthread_getattr_np = _libs["libc.so.6"].get("pthread_getattr_np", "cdecl")
     pthread_getattr_np.argtypes = [pthread_t, POINTER(pthread_attr_t)]
     pthread_getattr_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1567
+# /tmp/binding_gen/preprocessed.h: 1563
 if _libs["libc.so.6"].has("pthread_setschedparam", "cdecl"):
     pthread_setschedparam = _libs["libc.so.6"].get("pthread_setschedparam", "cdecl")
     pthread_setschedparam.argtypes = [pthread_t, c_int, POINTER(struct_sched_param)]
     pthread_setschedparam.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1570
+# /tmp/binding_gen/preprocessed.h: 1566
 if _libs["libc.so.6"].has("pthread_getschedparam", "cdecl"):
     pthread_getschedparam = _libs["libc.so.6"].get("pthread_getschedparam", "cdecl")
     pthread_getschedparam.argtypes = [pthread_t, POINTER(c_int), POINTER(struct_sched_param)]
     pthread_getschedparam.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1574
+# /tmp/binding_gen/preprocessed.h: 1570
 if _libs["libc.so.6"].has("pthread_setschedprio", "cdecl"):
     pthread_setschedprio = _libs["libc.so.6"].get("pthread_setschedprio", "cdecl")
     pthread_setschedprio.argtypes = [pthread_t, c_int]
     pthread_setschedprio.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1576
+# /tmp/binding_gen/preprocessed.h: 1572
 if _libs["libc.so.6"].has("pthread_getname_np", "cdecl"):
     pthread_getname_np = _libs["libc.so.6"].get("pthread_getname_np", "cdecl")
     pthread_getname_np.argtypes = [pthread_t, String, c_size_t]
     pthread_getname_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1579
+# /tmp/binding_gen/preprocessed.h: 1575
 if _libs["libc.so.6"].has("pthread_setname_np", "cdecl"):
     pthread_setname_np = _libs["libc.so.6"].get("pthread_setname_np", "cdecl")
     pthread_setname_np.argtypes = [pthread_t, String]
     pthread_setname_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1581
+# /tmp/binding_gen/preprocessed.h: 1577
 if _libs["libc.so.6"].has("pthread_getconcurrency", "cdecl"):
     pthread_getconcurrency = _libs["libc.so.6"].get("pthread_getconcurrency", "cdecl")
     pthread_getconcurrency.argtypes = []
     pthread_getconcurrency.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1582
+# /tmp/binding_gen/preprocessed.h: 1578
 if _libs["libc.so.6"].has("pthread_setconcurrency", "cdecl"):
     pthread_setconcurrency = _libs["libc.so.6"].get("pthread_setconcurrency", "cdecl")
     pthread_setconcurrency.argtypes = [c_int]
     pthread_setconcurrency.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1583
+# /tmp/binding_gen/preprocessed.h: 1579
 for _lib in _libs.values():
     if not _lib.has("pthread_yield", "cdecl"):
         continue
@@ -4806,7 +4802,7 @@ for _lib in _libs.values():
     pthread_yield.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1584
+# /tmp/binding_gen/preprocessed.h: 1580
 for _lib in _libs.values():
     if not _lib.has("pthread_yield", "cdecl"):
         continue
@@ -4815,49 +4811,49 @@ for _lib in _libs.values():
     pthread_yield.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1586
+# /tmp/binding_gen/preprocessed.h: 1582
 if _libs["libc.so.6"].has("pthread_setaffinity_np", "cdecl"):
     pthread_setaffinity_np = _libs["libc.so.6"].get("pthread_setaffinity_np", "cdecl")
     pthread_setaffinity_np.argtypes = [pthread_t, c_size_t, POINTER(cpu_set_t)]
     pthread_setaffinity_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1589
+# /tmp/binding_gen/preprocessed.h: 1585
 if _libs["libc.so.6"].has("pthread_getaffinity_np", "cdecl"):
     pthread_getaffinity_np = _libs["libc.so.6"].get("pthread_getaffinity_np", "cdecl")
     pthread_getaffinity_np.argtypes = [pthread_t, c_size_t, POINTER(cpu_set_t)]
     pthread_getaffinity_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1592
+# /tmp/binding_gen/preprocessed.h: 1588
 if _libs["libc.so.6"].has("pthread_once", "cdecl"):
     pthread_once = _libs["libc.so.6"].get("pthread_once", "cdecl")
     pthread_once.argtypes = [POINTER(pthread_once_t), CFUNCTYPE(UNCHECKED(None), )]
     pthread_once.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1594
+# /tmp/binding_gen/preprocessed.h: 1590
 if _libs["libc.so.6"].has("pthread_setcancelstate", "cdecl"):
     pthread_setcancelstate = _libs["libc.so.6"].get("pthread_setcancelstate", "cdecl")
     pthread_setcancelstate.argtypes = [c_int, POINTER(c_int)]
     pthread_setcancelstate.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1595
+# /tmp/binding_gen/preprocessed.h: 1591
 if _libs["libc.so.6"].has("pthread_setcanceltype", "cdecl"):
     pthread_setcanceltype = _libs["libc.so.6"].get("pthread_setcanceltype", "cdecl")
     pthread_setcanceltype.argtypes = [c_int, POINTER(c_int)]
     pthread_setcanceltype.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1596
+# /tmp/binding_gen/preprocessed.h: 1592
 if _libs["libc.so.6"].has("pthread_cancel", "cdecl"):
     pthread_cancel = _libs["libc.so.6"].get("pthread_cancel", "cdecl")
     pthread_cancel.argtypes = [pthread_t]
     pthread_cancel.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1597
+# /tmp/binding_gen/preprocessed.h: 1593
 if _libs["libc.so.6"].has("pthread_testcancel", "cdecl"):
     pthread_testcancel = _libs["libc.so.6"].get("pthread_testcancel", "cdecl")
     pthread_testcancel.argtypes = []
     pthread_testcancel.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1598
+# /tmp/binding_gen/preprocessed.h: 1594
 class struct___cancel_jmp_buf_tag(Structure):
     pass
 
@@ -4870,7 +4866,7 @@ struct___cancel_jmp_buf_tag._fields_ = [
     ('__mask_was_saved', c_int),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1607
+# /tmp/binding_gen/preprocessed.h: 1603
 class struct_anon_66(Structure):
     pass
 
@@ -4883,9 +4879,9 @@ struct_anon_66._fields_ = [
     ('__pad', POINTER(None) * int(4)),
 ]
 
-__pthread_unwind_buf_t = struct_anon_66# /tmp/binding_gen/preprocessed.h: 1607
+__pthread_unwind_buf_t = struct_anon_66# /tmp/binding_gen/preprocessed.h: 1603
 
-# /tmp/binding_gen/preprocessed.h: 1608
+# /tmp/binding_gen/preprocessed.h: 1604
 class struct___pthread_cleanup_frame(Structure):
     pass
 
@@ -4902,103 +4898,103 @@ struct___pthread_cleanup_frame._fields_ = [
     ('__cancel_type', c_int),
 ]
 
-# /tmp/binding_gen/preprocessed.h: 1615
+# /tmp/binding_gen/preprocessed.h: 1611
 if _libs["libc.so.6"].has("__pthread_register_cancel", "cdecl"):
     __pthread_register_cancel = _libs["libc.so.6"].get("__pthread_register_cancel", "cdecl")
     __pthread_register_cancel.argtypes = [POINTER(__pthread_unwind_buf_t)]
     __pthread_register_cancel.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1617
+# /tmp/binding_gen/preprocessed.h: 1613
 if _libs["libc.so.6"].has("__pthread_unregister_cancel", "cdecl"):
     __pthread_unregister_cancel = _libs["libc.so.6"].get("__pthread_unregister_cancel", "cdecl")
     __pthread_unregister_cancel.argtypes = [POINTER(__pthread_unwind_buf_t)]
     __pthread_unregister_cancel.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1619
+# /tmp/binding_gen/preprocessed.h: 1615
 if _libs["libc.so.6"].has("__pthread_register_cancel_defer", "cdecl"):
     __pthread_register_cancel_defer = _libs["libc.so.6"].get("__pthread_register_cancel_defer", "cdecl")
     __pthread_register_cancel_defer.argtypes = [POINTER(__pthread_unwind_buf_t)]
     __pthread_register_cancel_defer.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1621
+# /tmp/binding_gen/preprocessed.h: 1617
 if _libs["libc.so.6"].has("__pthread_unregister_cancel_restore", "cdecl"):
     __pthread_unregister_cancel_restore = _libs["libc.so.6"].get("__pthread_unregister_cancel_restore", "cdecl")
     __pthread_unregister_cancel_restore.argtypes = [POINTER(__pthread_unwind_buf_t)]
     __pthread_unregister_cancel_restore.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1623
+# /tmp/binding_gen/preprocessed.h: 1619
 if _libs["libc.so.6"].has("__pthread_unwind_next", "cdecl"):
     __pthread_unwind_next = _libs["libc.so.6"].get("__pthread_unwind_next", "cdecl")
     __pthread_unwind_next.argtypes = [POINTER(__pthread_unwind_buf_t)]
     __pthread_unwind_next.restype = None
 
-# /tmp/binding_gen/preprocessed.h: 1625
+# /tmp/binding_gen/preprocessed.h: 1621
 if _libs["libc.so.6"].has("__sigsetjmp", "cdecl"):
     __sigsetjmp = _libs["libc.so.6"].get("__sigsetjmp", "cdecl")
     __sigsetjmp.argtypes = [struct___jmp_buf_tag * int(1), c_int]
     __sigsetjmp.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1627
+# /tmp/binding_gen/preprocessed.h: 1623
 if _libs["libc.so.6"].has("pthread_mutex_init", "cdecl"):
     pthread_mutex_init = _libs["libc.so.6"].get("pthread_mutex_init", "cdecl")
     pthread_mutex_init.argtypes = [POINTER(pthread_mutex_t), POINTER(pthread_mutexattr_t)]
     pthread_mutex_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1630
+# /tmp/binding_gen/preprocessed.h: 1626
 if _libs["libc.so.6"].has("pthread_mutex_destroy", "cdecl"):
     pthread_mutex_destroy = _libs["libc.so.6"].get("pthread_mutex_destroy", "cdecl")
     pthread_mutex_destroy.argtypes = [POINTER(pthread_mutex_t)]
     pthread_mutex_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1632
+# /tmp/binding_gen/preprocessed.h: 1628
 if _libs["libc.so.6"].has("pthread_mutex_trylock", "cdecl"):
     pthread_mutex_trylock = _libs["libc.so.6"].get("pthread_mutex_trylock", "cdecl")
     pthread_mutex_trylock.argtypes = [POINTER(pthread_mutex_t)]
     pthread_mutex_trylock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1634
+# /tmp/binding_gen/preprocessed.h: 1630
 if _libs["libc.so.6"].has("pthread_mutex_lock", "cdecl"):
     pthread_mutex_lock = _libs["libc.so.6"].get("pthread_mutex_lock", "cdecl")
     pthread_mutex_lock.argtypes = [POINTER(pthread_mutex_t)]
     pthread_mutex_lock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1636
+# /tmp/binding_gen/preprocessed.h: 1632
 if _libs["libc.so.6"].has("pthread_mutex_timedlock", "cdecl"):
     pthread_mutex_timedlock = _libs["libc.so.6"].get("pthread_mutex_timedlock", "cdecl")
     pthread_mutex_timedlock.argtypes = [POINTER(pthread_mutex_t), POINTER(struct_timespec)]
     pthread_mutex_timedlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1639
+# /tmp/binding_gen/preprocessed.h: 1635
 if _libs["libc.so.6"].has("pthread_mutex_clocklock", "cdecl"):
     pthread_mutex_clocklock = _libs["libc.so.6"].get("pthread_mutex_clocklock", "cdecl")
     pthread_mutex_clocklock.argtypes = [POINTER(pthread_mutex_t), clockid_t, POINTER(struct_timespec)]
     pthread_mutex_clocklock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1643
+# /tmp/binding_gen/preprocessed.h: 1639
 if _libs["libc.so.6"].has("pthread_mutex_unlock", "cdecl"):
     pthread_mutex_unlock = _libs["libc.so.6"].get("pthread_mutex_unlock", "cdecl")
     pthread_mutex_unlock.argtypes = [POINTER(pthread_mutex_t)]
     pthread_mutex_unlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1645
+# /tmp/binding_gen/preprocessed.h: 1641
 if _libs["libc.so.6"].has("pthread_mutex_getprioceiling", "cdecl"):
     pthread_mutex_getprioceiling = _libs["libc.so.6"].get("pthread_mutex_getprioceiling", "cdecl")
     pthread_mutex_getprioceiling.argtypes = [POINTER(pthread_mutex_t), POINTER(c_int)]
     pthread_mutex_getprioceiling.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1649
+# /tmp/binding_gen/preprocessed.h: 1645
 if _libs["libc.so.6"].has("pthread_mutex_setprioceiling", "cdecl"):
     pthread_mutex_setprioceiling = _libs["libc.so.6"].get("pthread_mutex_setprioceiling", "cdecl")
     pthread_mutex_setprioceiling.argtypes = [POINTER(pthread_mutex_t), c_int, POINTER(c_int)]
     pthread_mutex_setprioceiling.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1653
+# /tmp/binding_gen/preprocessed.h: 1649
 if _libs["libc.so.6"].has("pthread_mutex_consistent", "cdecl"):
     pthread_mutex_consistent = _libs["libc.so.6"].get("pthread_mutex_consistent", "cdecl")
     pthread_mutex_consistent.argtypes = [POINTER(pthread_mutex_t)]
     pthread_mutex_consistent.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1655
+# /tmp/binding_gen/preprocessed.h: 1651
 for _lib in _libs.values():
     if not _lib.has("pthread_mutex_consistent_np", "cdecl"):
         continue
@@ -5007,73 +5003,73 @@ for _lib in _libs.values():
     pthread_mutex_consistent_np.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1657
+# /tmp/binding_gen/preprocessed.h: 1653
 if _libs["libc.so.6"].has("pthread_mutexattr_init", "cdecl"):
     pthread_mutexattr_init = _libs["libc.so.6"].get("pthread_mutexattr_init", "cdecl")
     pthread_mutexattr_init.argtypes = [POINTER(pthread_mutexattr_t)]
     pthread_mutexattr_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1659
+# /tmp/binding_gen/preprocessed.h: 1655
 if _libs["libc.so.6"].has("pthread_mutexattr_destroy", "cdecl"):
     pthread_mutexattr_destroy = _libs["libc.so.6"].get("pthread_mutexattr_destroy", "cdecl")
     pthread_mutexattr_destroy.argtypes = [POINTER(pthread_mutexattr_t)]
     pthread_mutexattr_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1661
+# /tmp/binding_gen/preprocessed.h: 1657
 if _libs["libc.so.6"].has("pthread_mutexattr_getpshared", "cdecl"):
     pthread_mutexattr_getpshared = _libs["libc.so.6"].get("pthread_mutexattr_getpshared", "cdecl")
     pthread_mutexattr_getpshared.argtypes = [POINTER(pthread_mutexattr_t), POINTER(c_int)]
     pthread_mutexattr_getpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1665
+# /tmp/binding_gen/preprocessed.h: 1661
 if _libs["libc.so.6"].has("pthread_mutexattr_setpshared", "cdecl"):
     pthread_mutexattr_setpshared = _libs["libc.so.6"].get("pthread_mutexattr_setpshared", "cdecl")
     pthread_mutexattr_setpshared.argtypes = [POINTER(pthread_mutexattr_t), c_int]
     pthread_mutexattr_setpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1668
+# /tmp/binding_gen/preprocessed.h: 1664
 if _libs["libc.so.6"].has("pthread_mutexattr_gettype", "cdecl"):
     pthread_mutexattr_gettype = _libs["libc.so.6"].get("pthread_mutexattr_gettype", "cdecl")
     pthread_mutexattr_gettype.argtypes = [POINTER(pthread_mutexattr_t), POINTER(c_int)]
     pthread_mutexattr_gettype.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1671
+# /tmp/binding_gen/preprocessed.h: 1667
 if _libs["libc.so.6"].has("pthread_mutexattr_settype", "cdecl"):
     pthread_mutexattr_settype = _libs["libc.so.6"].get("pthread_mutexattr_settype", "cdecl")
     pthread_mutexattr_settype.argtypes = [POINTER(pthread_mutexattr_t), c_int]
     pthread_mutexattr_settype.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1673
+# /tmp/binding_gen/preprocessed.h: 1669
 if _libs["libc.so.6"].has("pthread_mutexattr_getprotocol", "cdecl"):
     pthread_mutexattr_getprotocol = _libs["libc.so.6"].get("pthread_mutexattr_getprotocol", "cdecl")
     pthread_mutexattr_getprotocol.argtypes = [POINTER(pthread_mutexattr_t), POINTER(c_int)]
     pthread_mutexattr_getprotocol.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1677
+# /tmp/binding_gen/preprocessed.h: 1673
 if _libs["libc.so.6"].has("pthread_mutexattr_setprotocol", "cdecl"):
     pthread_mutexattr_setprotocol = _libs["libc.so.6"].get("pthread_mutexattr_setprotocol", "cdecl")
     pthread_mutexattr_setprotocol.argtypes = [POINTER(pthread_mutexattr_t), c_int]
     pthread_mutexattr_setprotocol.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1680
+# /tmp/binding_gen/preprocessed.h: 1676
 if _libs["libc.so.6"].has("pthread_mutexattr_getprioceiling", "cdecl"):
     pthread_mutexattr_getprioceiling = _libs["libc.so.6"].get("pthread_mutexattr_getprioceiling", "cdecl")
     pthread_mutexattr_getprioceiling.argtypes = [POINTER(pthread_mutexattr_t), POINTER(c_int)]
     pthread_mutexattr_getprioceiling.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1684
+# /tmp/binding_gen/preprocessed.h: 1680
 if _libs["libc.so.6"].has("pthread_mutexattr_setprioceiling", "cdecl"):
     pthread_mutexattr_setprioceiling = _libs["libc.so.6"].get("pthread_mutexattr_setprioceiling", "cdecl")
     pthread_mutexattr_setprioceiling.argtypes = [POINTER(pthread_mutexattr_t), c_int]
     pthread_mutexattr_setprioceiling.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1687
+# /tmp/binding_gen/preprocessed.h: 1683
 if _libs["libc.so.6"].has("pthread_mutexattr_getrobust", "cdecl"):
     pthread_mutexattr_getrobust = _libs["libc.so.6"].get("pthread_mutexattr_getrobust", "cdecl")
     pthread_mutexattr_getrobust.argtypes = [POINTER(pthread_mutexattr_t), POINTER(c_int)]
     pthread_mutexattr_getrobust.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1690
+# /tmp/binding_gen/preprocessed.h: 1686
 for _lib in _libs.values():
     if not _lib.has("pthread_mutexattr_getrobust_np", "cdecl"):
         continue
@@ -5082,13 +5078,13 @@ for _lib in _libs.values():
     pthread_mutexattr_getrobust_np.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1692
+# /tmp/binding_gen/preprocessed.h: 1688
 if _libs["libc.so.6"].has("pthread_mutexattr_setrobust", "cdecl"):
     pthread_mutexattr_setrobust = _libs["libc.so.6"].get("pthread_mutexattr_setrobust", "cdecl")
     pthread_mutexattr_setrobust.argtypes = [POINTER(pthread_mutexattr_t), c_int]
     pthread_mutexattr_setrobust.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1695
+# /tmp/binding_gen/preprocessed.h: 1691
 for _lib in _libs.values():
     if not _lib.has("pthread_mutexattr_setrobust_np", "cdecl"):
         continue
@@ -5097,290 +5093,290 @@ for _lib in _libs.values():
     pthread_mutexattr_setrobust_np.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1697
+# /tmp/binding_gen/preprocessed.h: 1693
 if _libs["libc.so.6"].has("pthread_rwlock_init", "cdecl"):
     pthread_rwlock_init = _libs["libc.so.6"].get("pthread_rwlock_init", "cdecl")
     pthread_rwlock_init.argtypes = [POINTER(pthread_rwlock_t), POINTER(pthread_rwlockattr_t)]
     pthread_rwlock_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1700
+# /tmp/binding_gen/preprocessed.h: 1696
 if _libs["libc.so.6"].has("pthread_rwlock_destroy", "cdecl"):
     pthread_rwlock_destroy = _libs["libc.so.6"].get("pthread_rwlock_destroy", "cdecl")
     pthread_rwlock_destroy.argtypes = [POINTER(pthread_rwlock_t)]
     pthread_rwlock_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1702
+# /tmp/binding_gen/preprocessed.h: 1698
 if _libs["libc.so.6"].has("pthread_rwlock_rdlock", "cdecl"):
     pthread_rwlock_rdlock = _libs["libc.so.6"].get("pthread_rwlock_rdlock", "cdecl")
     pthread_rwlock_rdlock.argtypes = [POINTER(pthread_rwlock_t)]
     pthread_rwlock_rdlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1704
+# /tmp/binding_gen/preprocessed.h: 1700
 if _libs["libc.so.6"].has("pthread_rwlock_tryrdlock", "cdecl"):
     pthread_rwlock_tryrdlock = _libs["libc.so.6"].get("pthread_rwlock_tryrdlock", "cdecl")
     pthread_rwlock_tryrdlock.argtypes = [POINTER(pthread_rwlock_t)]
     pthread_rwlock_tryrdlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1706
+# /tmp/binding_gen/preprocessed.h: 1702
 if _libs["libc.so.6"].has("pthread_rwlock_timedrdlock", "cdecl"):
     pthread_rwlock_timedrdlock = _libs["libc.so.6"].get("pthread_rwlock_timedrdlock", "cdecl")
     pthread_rwlock_timedrdlock.argtypes = [POINTER(pthread_rwlock_t), POINTER(struct_timespec)]
     pthread_rwlock_timedrdlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1709
+# /tmp/binding_gen/preprocessed.h: 1705
 if _libs["libc.so.6"].has("pthread_rwlock_clockrdlock", "cdecl"):
     pthread_rwlock_clockrdlock = _libs["libc.so.6"].get("pthread_rwlock_clockrdlock", "cdecl")
     pthread_rwlock_clockrdlock.argtypes = [POINTER(pthread_rwlock_t), clockid_t, POINTER(struct_timespec)]
     pthread_rwlock_clockrdlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1713
+# /tmp/binding_gen/preprocessed.h: 1709
 if _libs["libc.so.6"].has("pthread_rwlock_wrlock", "cdecl"):
     pthread_rwlock_wrlock = _libs["libc.so.6"].get("pthread_rwlock_wrlock", "cdecl")
     pthread_rwlock_wrlock.argtypes = [POINTER(pthread_rwlock_t)]
     pthread_rwlock_wrlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1715
+# /tmp/binding_gen/preprocessed.h: 1711
 if _libs["libc.so.6"].has("pthread_rwlock_trywrlock", "cdecl"):
     pthread_rwlock_trywrlock = _libs["libc.so.6"].get("pthread_rwlock_trywrlock", "cdecl")
     pthread_rwlock_trywrlock.argtypes = [POINTER(pthread_rwlock_t)]
     pthread_rwlock_trywrlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1717
+# /tmp/binding_gen/preprocessed.h: 1713
 if _libs["libc.so.6"].has("pthread_rwlock_timedwrlock", "cdecl"):
     pthread_rwlock_timedwrlock = _libs["libc.so.6"].get("pthread_rwlock_timedwrlock", "cdecl")
     pthread_rwlock_timedwrlock.argtypes = [POINTER(pthread_rwlock_t), POINTER(struct_timespec)]
     pthread_rwlock_timedwrlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1720
+# /tmp/binding_gen/preprocessed.h: 1716
 if _libs["libc.so.6"].has("pthread_rwlock_clockwrlock", "cdecl"):
     pthread_rwlock_clockwrlock = _libs["libc.so.6"].get("pthread_rwlock_clockwrlock", "cdecl")
     pthread_rwlock_clockwrlock.argtypes = [POINTER(pthread_rwlock_t), clockid_t, POINTER(struct_timespec)]
     pthread_rwlock_clockwrlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1724
+# /tmp/binding_gen/preprocessed.h: 1720
 if _libs["libc.so.6"].has("pthread_rwlock_unlock", "cdecl"):
     pthread_rwlock_unlock = _libs["libc.so.6"].get("pthread_rwlock_unlock", "cdecl")
     pthread_rwlock_unlock.argtypes = [POINTER(pthread_rwlock_t)]
     pthread_rwlock_unlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1726
+# /tmp/binding_gen/preprocessed.h: 1722
 if _libs["libc.so.6"].has("pthread_rwlockattr_init", "cdecl"):
     pthread_rwlockattr_init = _libs["libc.so.6"].get("pthread_rwlockattr_init", "cdecl")
     pthread_rwlockattr_init.argtypes = [POINTER(pthread_rwlockattr_t)]
     pthread_rwlockattr_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1728
+# /tmp/binding_gen/preprocessed.h: 1724
 if _libs["libc.so.6"].has("pthread_rwlockattr_destroy", "cdecl"):
     pthread_rwlockattr_destroy = _libs["libc.so.6"].get("pthread_rwlockattr_destroy", "cdecl")
     pthread_rwlockattr_destroy.argtypes = [POINTER(pthread_rwlockattr_t)]
     pthread_rwlockattr_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1730
+# /tmp/binding_gen/preprocessed.h: 1726
 if _libs["libc.so.6"].has("pthread_rwlockattr_getpshared", "cdecl"):
     pthread_rwlockattr_getpshared = _libs["libc.so.6"].get("pthread_rwlockattr_getpshared", "cdecl")
     pthread_rwlockattr_getpshared.argtypes = [POINTER(pthread_rwlockattr_t), POINTER(c_int)]
     pthread_rwlockattr_getpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1734
+# /tmp/binding_gen/preprocessed.h: 1730
 if _libs["libc.so.6"].has("pthread_rwlockattr_setpshared", "cdecl"):
     pthread_rwlockattr_setpshared = _libs["libc.so.6"].get("pthread_rwlockattr_setpshared", "cdecl")
     pthread_rwlockattr_setpshared.argtypes = [POINTER(pthread_rwlockattr_t), c_int]
     pthread_rwlockattr_setpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1737
+# /tmp/binding_gen/preprocessed.h: 1733
 if _libs["libc.so.6"].has("pthread_rwlockattr_getkind_np", "cdecl"):
     pthread_rwlockattr_getkind_np = _libs["libc.so.6"].get("pthread_rwlockattr_getkind_np", "cdecl")
     pthread_rwlockattr_getkind_np.argtypes = [POINTER(pthread_rwlockattr_t), POINTER(c_int)]
     pthread_rwlockattr_getkind_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1741
+# /tmp/binding_gen/preprocessed.h: 1737
 if _libs["libc.so.6"].has("pthread_rwlockattr_setkind_np", "cdecl"):
     pthread_rwlockattr_setkind_np = _libs["libc.so.6"].get("pthread_rwlockattr_setkind_np", "cdecl")
     pthread_rwlockattr_setkind_np.argtypes = [POINTER(pthread_rwlockattr_t), c_int]
     pthread_rwlockattr_setkind_np.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1743
+# /tmp/binding_gen/preprocessed.h: 1739
 if _libs["libc.so.6"].has("pthread_cond_init", "cdecl"):
     pthread_cond_init = _libs["libc.so.6"].get("pthread_cond_init", "cdecl")
     pthread_cond_init.argtypes = [POINTER(pthread_cond_t), POINTER(pthread_condattr_t)]
     pthread_cond_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1746
+# /tmp/binding_gen/preprocessed.h: 1742
 if _libs["libc.so.6"].has("pthread_cond_destroy", "cdecl"):
     pthread_cond_destroy = _libs["libc.so.6"].get("pthread_cond_destroy", "cdecl")
     pthread_cond_destroy.argtypes = [POINTER(pthread_cond_t)]
     pthread_cond_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1748
+# /tmp/binding_gen/preprocessed.h: 1744
 if _libs["libc.so.6"].has("pthread_cond_signal", "cdecl"):
     pthread_cond_signal = _libs["libc.so.6"].get("pthread_cond_signal", "cdecl")
     pthread_cond_signal.argtypes = [POINTER(pthread_cond_t)]
     pthread_cond_signal.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1750
+# /tmp/binding_gen/preprocessed.h: 1746
 if _libs["libc.so.6"].has("pthread_cond_broadcast", "cdecl"):
     pthread_cond_broadcast = _libs["libc.so.6"].get("pthread_cond_broadcast", "cdecl")
     pthread_cond_broadcast.argtypes = [POINTER(pthread_cond_t)]
     pthread_cond_broadcast.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1752
+# /tmp/binding_gen/preprocessed.h: 1748
 if _libs["libc.so.6"].has("pthread_cond_wait", "cdecl"):
     pthread_cond_wait = _libs["libc.so.6"].get("pthread_cond_wait", "cdecl")
     pthread_cond_wait.argtypes = [POINTER(pthread_cond_t), POINTER(pthread_mutex_t)]
     pthread_cond_wait.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1755
+# /tmp/binding_gen/preprocessed.h: 1751
 if _libs["libc.so.6"].has("pthread_cond_timedwait", "cdecl"):
     pthread_cond_timedwait = _libs["libc.so.6"].get("pthread_cond_timedwait", "cdecl")
     pthread_cond_timedwait.argtypes = [POINTER(pthread_cond_t), POINTER(pthread_mutex_t), POINTER(struct_timespec)]
     pthread_cond_timedwait.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1759
+# /tmp/binding_gen/preprocessed.h: 1755
 if _libs["libc.so.6"].has("pthread_cond_clockwait", "cdecl"):
     pthread_cond_clockwait = _libs["libc.so.6"].get("pthread_cond_clockwait", "cdecl")
     pthread_cond_clockwait.argtypes = [POINTER(pthread_cond_t), POINTER(pthread_mutex_t), __clockid_t, POINTER(struct_timespec)]
     pthread_cond_clockwait.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1764
+# /tmp/binding_gen/preprocessed.h: 1760
 if _libs["libc.so.6"].has("pthread_condattr_init", "cdecl"):
     pthread_condattr_init = _libs["libc.so.6"].get("pthread_condattr_init", "cdecl")
     pthread_condattr_init.argtypes = [POINTER(pthread_condattr_t)]
     pthread_condattr_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1766
+# /tmp/binding_gen/preprocessed.h: 1762
 if _libs["libc.so.6"].has("pthread_condattr_destroy", "cdecl"):
     pthread_condattr_destroy = _libs["libc.so.6"].get("pthread_condattr_destroy", "cdecl")
     pthread_condattr_destroy.argtypes = [POINTER(pthread_condattr_t)]
     pthread_condattr_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1768
+# /tmp/binding_gen/preprocessed.h: 1764
 if _libs["libc.so.6"].has("pthread_condattr_getpshared", "cdecl"):
     pthread_condattr_getpshared = _libs["libc.so.6"].get("pthread_condattr_getpshared", "cdecl")
     pthread_condattr_getpshared.argtypes = [POINTER(pthread_condattr_t), POINTER(c_int)]
     pthread_condattr_getpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1772
+# /tmp/binding_gen/preprocessed.h: 1768
 if _libs["libc.so.6"].has("pthread_condattr_setpshared", "cdecl"):
     pthread_condattr_setpshared = _libs["libc.so.6"].get("pthread_condattr_setpshared", "cdecl")
     pthread_condattr_setpshared.argtypes = [POINTER(pthread_condattr_t), c_int]
     pthread_condattr_setpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1774
+# /tmp/binding_gen/preprocessed.h: 1770
 if _libs["libc.so.6"].has("pthread_condattr_getclock", "cdecl"):
     pthread_condattr_getclock = _libs["libc.so.6"].get("pthread_condattr_getclock", "cdecl")
     pthread_condattr_getclock.argtypes = [POINTER(pthread_condattr_t), POINTER(__clockid_t)]
     pthread_condattr_getclock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1778
+# /tmp/binding_gen/preprocessed.h: 1774
 if _libs["libc.so.6"].has("pthread_condattr_setclock", "cdecl"):
     pthread_condattr_setclock = _libs["libc.so.6"].get("pthread_condattr_setclock", "cdecl")
     pthread_condattr_setclock.argtypes = [POINTER(pthread_condattr_t), __clockid_t]
     pthread_condattr_setclock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1781
+# /tmp/binding_gen/preprocessed.h: 1777
 if _libs["libc.so.6"].has("pthread_spin_init", "cdecl"):
     pthread_spin_init = _libs["libc.so.6"].get("pthread_spin_init", "cdecl")
     pthread_spin_init.argtypes = [POINTER(pthread_spinlock_t), c_int]
     pthread_spin_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1783
+# /tmp/binding_gen/preprocessed.h: 1779
 if _libs["libc.so.6"].has("pthread_spin_destroy", "cdecl"):
     pthread_spin_destroy = _libs["libc.so.6"].get("pthread_spin_destroy", "cdecl")
     pthread_spin_destroy.argtypes = [POINTER(pthread_spinlock_t)]
     pthread_spin_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1785
+# /tmp/binding_gen/preprocessed.h: 1781
 if _libs["libc.so.6"].has("pthread_spin_lock", "cdecl"):
     pthread_spin_lock = _libs["libc.so.6"].get("pthread_spin_lock", "cdecl")
     pthread_spin_lock.argtypes = [POINTER(pthread_spinlock_t)]
     pthread_spin_lock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1787
+# /tmp/binding_gen/preprocessed.h: 1783
 if _libs["libc.so.6"].has("pthread_spin_trylock", "cdecl"):
     pthread_spin_trylock = _libs["libc.so.6"].get("pthread_spin_trylock", "cdecl")
     pthread_spin_trylock.argtypes = [POINTER(pthread_spinlock_t)]
     pthread_spin_trylock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1789
+# /tmp/binding_gen/preprocessed.h: 1785
 if _libs["libc.so.6"].has("pthread_spin_unlock", "cdecl"):
     pthread_spin_unlock = _libs["libc.so.6"].get("pthread_spin_unlock", "cdecl")
     pthread_spin_unlock.argtypes = [POINTER(pthread_spinlock_t)]
     pthread_spin_unlock.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1791
+# /tmp/binding_gen/preprocessed.h: 1787
 if _libs["libc.so.6"].has("pthread_barrier_init", "cdecl"):
     pthread_barrier_init = _libs["libc.so.6"].get("pthread_barrier_init", "cdecl")
     pthread_barrier_init.argtypes = [POINTER(pthread_barrier_t), POINTER(pthread_barrierattr_t), c_uint]
     pthread_barrier_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1795
+# /tmp/binding_gen/preprocessed.h: 1791
 if _libs["libc.so.6"].has("pthread_barrier_destroy", "cdecl"):
     pthread_barrier_destroy = _libs["libc.so.6"].get("pthread_barrier_destroy", "cdecl")
     pthread_barrier_destroy.argtypes = [POINTER(pthread_barrier_t)]
     pthread_barrier_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1797
+# /tmp/binding_gen/preprocessed.h: 1793
 if _libs["libc.so.6"].has("pthread_barrier_wait", "cdecl"):
     pthread_barrier_wait = _libs["libc.so.6"].get("pthread_barrier_wait", "cdecl")
     pthread_barrier_wait.argtypes = [POINTER(pthread_barrier_t)]
     pthread_barrier_wait.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1799
+# /tmp/binding_gen/preprocessed.h: 1795
 if _libs["libc.so.6"].has("pthread_barrierattr_init", "cdecl"):
     pthread_barrierattr_init = _libs["libc.so.6"].get("pthread_barrierattr_init", "cdecl")
     pthread_barrierattr_init.argtypes = [POINTER(pthread_barrierattr_t)]
     pthread_barrierattr_init.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1801
+# /tmp/binding_gen/preprocessed.h: 1797
 if _libs["libc.so.6"].has("pthread_barrierattr_destroy", "cdecl"):
     pthread_barrierattr_destroy = _libs["libc.so.6"].get("pthread_barrierattr_destroy", "cdecl")
     pthread_barrierattr_destroy.argtypes = [POINTER(pthread_barrierattr_t)]
     pthread_barrierattr_destroy.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1803
+# /tmp/binding_gen/preprocessed.h: 1799
 if _libs["libc.so.6"].has("pthread_barrierattr_getpshared", "cdecl"):
     pthread_barrierattr_getpshared = _libs["libc.so.6"].get("pthread_barrierattr_getpshared", "cdecl")
     pthread_barrierattr_getpshared.argtypes = [POINTER(pthread_barrierattr_t), POINTER(c_int)]
     pthread_barrierattr_getpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1807
+# /tmp/binding_gen/preprocessed.h: 1803
 if _libs["libc.so.6"].has("pthread_barrierattr_setpshared", "cdecl"):
     pthread_barrierattr_setpshared = _libs["libc.so.6"].get("pthread_barrierattr_setpshared", "cdecl")
     pthread_barrierattr_setpshared.argtypes = [POINTER(pthread_barrierattr_t), c_int]
     pthread_barrierattr_setpshared.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1810
+# /tmp/binding_gen/preprocessed.h: 1806
 if _libs["libc.so.6"].has("pthread_key_create", "cdecl"):
     pthread_key_create = _libs["libc.so.6"].get("pthread_key_create", "cdecl")
     pthread_key_create.argtypes = [POINTER(pthread_key_t), CFUNCTYPE(UNCHECKED(None), POINTER(None))]
     pthread_key_create.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1813
+# /tmp/binding_gen/preprocessed.h: 1809
 if _libs["libc.so.6"].has("pthread_key_delete", "cdecl"):
     pthread_key_delete = _libs["libc.so.6"].get("pthread_key_delete", "cdecl")
     pthread_key_delete.argtypes = [pthread_key_t]
     pthread_key_delete.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1814
+# /tmp/binding_gen/preprocessed.h: 1810
 if _libs["libc.so.6"].has("pthread_getspecific", "cdecl"):
     pthread_getspecific = _libs["libc.so.6"].get("pthread_getspecific", "cdecl")
     pthread_getspecific.argtypes = [pthread_key_t]
     pthread_getspecific.restype = POINTER(c_ubyte)
     pthread_getspecific.errcheck = lambda v,*a : cast(v, c_void_p)
 
-# /tmp/binding_gen/preprocessed.h: 1815
+# /tmp/binding_gen/preprocessed.h: 1811
 if _libs["libc.so.6"].has("pthread_setspecific", "cdecl"):
     pthread_setspecific = _libs["libc.so.6"].get("pthread_setspecific", "cdecl")
     pthread_setspecific.argtypes = [pthread_key_t, POINTER(None)]
     pthread_setspecific.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1818
+# /tmp/binding_gen/preprocessed.h: 1814
 if _libs["libc.so.6"].has("pthread_getcpuclockid", "cdecl"):
     pthread_getcpuclockid = _libs["libc.so.6"].get("pthread_getcpuclockid", "cdecl")
     pthread_getcpuclockid.argtypes = [pthread_t, POINTER(__clockid_t)]
     pthread_getcpuclockid.restype = c_int
 
-# /tmp/binding_gen/preprocessed.h: 1821
+# /tmp/binding_gen/preprocessed.h: 1817
 for _lib in _libs.values():
     if not _lib.has("pthread_atfork", "cdecl"):
         continue
@@ -5389,7 +5385,7 @@ for _lib in _libs.values():
     pthread_atfork.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1845
+# /tmp/binding_gen/preprocessed.h: 1841
 class struct_jon_gui_state(Structure):
     pass
 
@@ -5434,11 +5430,11 @@ struct_jon_gui_state._fields_ = [
     ('debug', jon_gui_data_debug_t),
 ]
 
-jon_gui_state = struct_jon_gui_state# /tmp/binding_gen/preprocessed.h: 1845
+jon_gui_state = struct_jon_gui_state# /tmp/binding_gen/preprocessed.h: 1841
 
-jon_gui_state_to_proto_ptr = CFUNCTYPE(UNCHECKED(c_ptrdiff_t), POINTER(uint8_t), POINTER(jon_gui_state))# /tmp/binding_gen/preprocessed.h: 1846
+jon_gui_state_to_proto_ptr = CFUNCTYPE(UNCHECKED(c_ptrdiff_t), POINTER(uint8_t), POINTER(jon_gui_state))# /tmp/binding_gen/preprocessed.h: 1842
 
-# /tmp/binding_gen/preprocessed.h: 1848
+# /tmp/binding_gen/preprocessed.h: 1844
 for _lib in _libs.values():
     if not _lib.has("jon_gui_writer_init", "cdecl"):
         continue
@@ -5447,7 +5443,7 @@ for _lib in _libs.values():
     jon_gui_writer_init.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1849
+# /tmp/binding_gen/preprocessed.h: 1845
 for _lib in _libs.values():
     if not _lib.has("jon_gui_writer_destroy", "cdecl"):
         continue
@@ -5456,7 +5452,7 @@ for _lib in _libs.values():
     jon_gui_writer_destroy.restype = None
     break
 
-# /tmp/binding_gen/preprocessed.h: 1850
+# /tmp/binding_gen/preprocessed.h: 1846
 for _lib in _libs.values():
     if not _lib.has("jon_gui_reader_init", "cdecl"):
         continue
@@ -5465,7 +5461,7 @@ for _lib in _libs.values():
     jon_gui_reader_init.restype = c_int
     break
 
-# /tmp/binding_gen/preprocessed.h: 1851
+# /tmp/binding_gen/preprocessed.h: 1847
 for _lib in _libs.values():
     if not _lib.has("jon_gui_reader_destroy", "cdecl"):
         continue
@@ -5474,7 +5470,7 @@ for _lib in _libs.values():
     jon_gui_reader_destroy.restype = None
     break
 
-# /tmp/binding_gen/preprocessed.h: 1852
+# /tmp/binding_gen/preprocessed.h: 1848
 for _lib in _libs.values():
     if not _lib.has("jon_gui_writer_write", "cdecl"):
         continue
@@ -5483,7 +5479,7 @@ for _lib in _libs.values():
     jon_gui_writer_write.restype = None
     break
 
-# /tmp/binding_gen/preprocessed.h: 1854
+# /tmp/binding_gen/preprocessed.h: 1850
 for _lib in _libs.values():
     if not _lib.has("jon_gui_reader_read", "cdecl"):
         continue
@@ -5492,7 +5488,7 @@ for _lib in _libs.values():
     jon_gui_reader_read.restype = None
     break
 
-# /tmp/binding_gen/preprocessed.h: 1855
+# /tmp/binding_gen/preprocessed.h: 1851
 for _lib in _libs.values():
     if not _lib.has("jon_gui_data_make_default", "cdecl"):
         continue
@@ -5501,15 +5497,15 @@ for _lib in _libs.values():
     jon_gui_data_make_default.restype = jon_gui_state
     break
 
-enum_anon_67 = c_int# /tmp/binding_gen/preprocessed.h: 1861
+enum_anon_67 = c_int# /tmp/binding_gen/preprocessed.h: 1857
 
-jon_gui_data_decr = (-1)# /tmp/binding_gen/preprocessed.h: 1861
+jon_gui_data_decr = (-1)# /tmp/binding_gen/preprocessed.h: 1857
 
-jon_gui_data_refresh = 0# /tmp/binding_gen/preprocessed.h: 1861
+jon_gui_data_refresh = 0# /tmp/binding_gen/preprocessed.h: 1857
 
-jon_gui_data_incr = 1# /tmp/binding_gen/preprocessed.h: 1861
+jon_gui_data_incr = 1# /tmp/binding_gen/preprocessed.h: 1857
 
-jon_gui_data_update_type = enum_anon_67# /tmp/binding_gen/preprocessed.h: 1861
+jon_gui_data_update_type = enum_anon_67# /tmp/binding_gen/preprocessed.h: 1857
 
 atomic_flag = struct_atomic_flag# /tmp/binding_gen/preprocessed.h: 171
 
@@ -5545,65 +5541,65 @@ __locale_data = struct___locale_data# /tmp/binding_gen/preprocessed.h: 578
 
 __locale_struct = struct___locale_struct# /tmp/binding_gen/preprocessed.h: 576
 
-jon_gui_data_gps = struct_jon_gui_data_gps# /tmp/binding_gen/preprocessed.h: 691
+jon_gui_data_gps = struct_jon_gui_data_gps# /tmp/binding_gen/preprocessed.h: 689
 
-jon_gui_data_header = struct_jon_gui_data_header# /tmp/binding_gen/preprocessed.h: 715
+jon_gui_data_header = struct_jon_gui_data_header# /tmp/binding_gen/preprocessed.h: 713
 
-jon_gui_data_lens = struct_jon_gui_data_lens# /tmp/binding_gen/preprocessed.h: 775
+jon_gui_data_lens = struct_jon_gui_data_lens# /tmp/binding_gen/preprocessed.h: 773
 
-jon_gui_data_lrf = struct_jon_gui_data_lrf# /tmp/binding_gen/preprocessed.h: 800
+jon_gui_data_lrf = struct_jon_gui_data_lrf# /tmp/binding_gen/preprocessed.h: 798
 
-jon_gui_data_media = struct_jon_gui_data_media# /tmp/binding_gen/preprocessed.h: 806
+jon_gui_data_media = struct_jon_gui_data_media# /tmp/binding_gen/preprocessed.h: 804
 
-jon_gui_data_meteo = struct_jon_gui_data_meteo# /tmp/binding_gen/preprocessed.h: 816
+jon_gui_data_meteo = struct_jon_gui_data_meteo# /tmp/binding_gen/preprocessed.h: 814
 
-jon_gui_data_osd = struct_jon_gui_data_osd# /tmp/binding_gen/preprocessed.h: 842
+jon_gui_data_osd = struct_jon_gui_data_osd# /tmp/binding_gen/preprocessed.h: 840
 
-jon_gui_data_rotary = struct_jon_gui_data_rotary# /tmp/binding_gen/preprocessed.h: 887
+jon_gui_data_rotary = struct_jon_gui_data_rotary# /tmp/binding_gen/preprocessed.h: 885
 
-jon_gui_data_power_module_state = struct_jon_gui_data_power_module_state# /tmp/binding_gen/preprocessed.h: 903
+jon_gui_data_power_module_state = struct_jon_gui_data_power_module_state# /tmp/binding_gen/preprocessed.h: 901
 
-jon_gui_data_power = struct_jon_gui_data_power# /tmp/binding_gen/preprocessed.h: 915
+jon_gui_data_power = struct_jon_gui_data_power# /tmp/binding_gen/preprocessed.h: 913
 
-jon_gui_data_system = struct_jon_gui_data_system# /tmp/binding_gen/preprocessed.h: 983
+jon_gui_data_system = struct_jon_gui_data_system# /tmp/binding_gen/preprocessed.h: 981
 
-jon_gui_data_target_spec = struct_jon_gui_data_target_spec# /tmp/binding_gen/preprocessed.h: 1013
+jon_gui_data_target_spec = struct_jon_gui_data_target_spec# /tmp/binding_gen/preprocessed.h: 1011
 
-jon_gui_data_targets = struct_jon_gui_data_targets# /tmp/binding_gen/preprocessed.h: 1027
+jon_gui_data_targets = struct_jon_gui_data_targets# /tmp/binding_gen/preprocessed.h: 1025
 
-jon_gui_data_time = struct_jon_gui_data_time# /tmp/binding_gen/preprocessed.h: 1051
+jon_gui_data_time = struct_jon_gui_data_time# /tmp/binding_gen/preprocessed.h: 1049
 
-jon_gui_color_rgba8888 = union_jon_gui_color_rgba8888# /tmp/binding_gen/preprocessed.h: 1089
+jon_gui_color_rgba8888 = union_jon_gui_color_rgba8888# /tmp/binding_gen/preprocessed.h: 1087
 
-jon_gui_tracking_point = union_jon_gui_tracking_point# /tmp/binding_gen/preprocessed.h: 1099
+jon_gui_tracking_point = union_jon_gui_tracking_point# /tmp/binding_gen/preprocessed.h: 1097
 
-jon_gui_tracking_quad = struct_jon_gui_tracking_quad# /tmp/binding_gen/preprocessed.h: 1104
+jon_gui_tracking_quad = struct_jon_gui_tracking_quad# /tmp/binding_gen/preprocessed.h: 1102
 
-jon_gui_data_cv = struct_jon_gui_data_cv# /tmp/binding_gen/preprocessed.h: 1117
+jon_gui_data_cv = struct_jon_gui_data_cv# /tmp/binding_gen/preprocessed.h: 1115
 
-__pthread_internal_list = struct___pthread_internal_list# /tmp/binding_gen/preprocessed.h: 1261
+__pthread_internal_list = struct___pthread_internal_list# /tmp/binding_gen/preprocessed.h: 1259
 
-__pthread_internal_slist = struct___pthread_internal_slist# /tmp/binding_gen/preprocessed.h: 1266
+__pthread_internal_slist = struct___pthread_internal_slist# /tmp/binding_gen/preprocessed.h: 1264
 
-__pthread_mutex_s = struct___pthread_mutex_s# /tmp/binding_gen/preprocessed.h: 1270
+__pthread_mutex_s = struct___pthread_mutex_s# /tmp/binding_gen/preprocessed.h: 1268
 
-__pthread_rwlock_arch_t = struct___pthread_rwlock_arch_t# /tmp/binding_gen/preprocessed.h: 1281
+__pthread_rwlock_arch_t = struct___pthread_rwlock_arch_t# /tmp/binding_gen/preprocessed.h: 1278
 
-__pthread_cond_s = struct___pthread_cond_s# /tmp/binding_gen/preprocessed.h: 1296
+__pthread_cond_s = struct___pthread_cond_s# /tmp/binding_gen/preprocessed.h: 1292
 
-pthread_attr_t = union_pthread_attr_t# /tmp/binding_gen/preprocessed.h: 1325
+pthread_attr_t = union_pthread_attr_t# /tmp/binding_gen/preprocessed.h: 1321
 
-sched_param = struct_sched_param# /tmp/binding_gen/preprocessed.h: 1366
+sched_param = struct_sched_param# /tmp/binding_gen/preprocessed.h: 1362
 
-__jmp_buf_tag = struct___jmp_buf_tag# /tmp/binding_gen/preprocessed.h: 1400
+__jmp_buf_tag = struct___jmp_buf_tag# /tmp/binding_gen/preprocessed.h: 1396
 
-_pthread_cleanup_buffer = struct__pthread_cleanup_buffer# /tmp/binding_gen/preprocessed.h: 1461
+_pthread_cleanup_buffer = struct__pthread_cleanup_buffer# /tmp/binding_gen/preprocessed.h: 1457
 
-__cancel_jmp_buf_tag = struct___cancel_jmp_buf_tag# /tmp/binding_gen/preprocessed.h: 1598
+__cancel_jmp_buf_tag = struct___cancel_jmp_buf_tag# /tmp/binding_gen/preprocessed.h: 1594
 
-__pthread_cleanup_frame = struct___pthread_cleanup_frame# /tmp/binding_gen/preprocessed.h: 1608
+__pthread_cleanup_frame = struct___pthread_cleanup_frame# /tmp/binding_gen/preprocessed.h: 1604
 
-jon_gui_state = struct_jon_gui_state# /tmp/binding_gen/preprocessed.h: 1845
+jon_gui_state = struct_jon_gui_state# /tmp/binding_gen/preprocessed.h: 1841
 
 # No inserted files
 
