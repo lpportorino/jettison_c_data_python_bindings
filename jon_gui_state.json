@@ -1,0 +1,2509 @@
+{
+  "type": "structure",
+  "name": "struct_jon_gui_state",
+  "fields": [
+    {
+      "name": "header",
+      "ctype": "struct_jon_gui_data_header",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_header",
+        "fields": [
+          {
+            "name": "version",
+            "ctype": "int32"
+          },
+          {
+            "name": "state_update_counter",
+            "ctype": "int32"
+          },
+          {
+            "name": "system_monotonic_time_us",
+            "ctype": "uint64"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_13",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_13",
+              "fields": [
+                {
+                  "name": "active_mode_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "active_mode_id_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_14",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_14",
+              "fields": [
+                {
+                  "name": "active_screen_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "active_screen_id_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "compass",
+      "ctype": "struct_jon_gui_data_compass",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_compass",
+        "fields": [
+          {
+            "name": "azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "bank",
+            "ctype": "int32"
+          },
+          {
+            "name": "offset",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_4",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_4",
+              "fields": [
+                {
+                  "name": "units_idx",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "units_idx_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_5",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_5",
+              "fields": [
+                {
+                  "name": "device_status",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "device_status_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "compass_calibration",
+      "ctype": "struct_jon_gui_data_compass_calibration",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_compass_calibration",
+        "fields": [
+          {
+            "name": "stage",
+            "ctype": "int32"
+          },
+          {
+            "name": "final_stage",
+            "ctype": "int32"
+          },
+          {
+            "name": "target_azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "target_elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "target_bank",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_6",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_6",
+              "fields": [
+                {
+                  "name": "status",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "jon_gui_data_compass_calibrate_status_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "colors",
+      "ctype": "struct_jon_gui_data_colors",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_colors",
+        "fields": [
+          {
+            "name": "menu",
+            "ctype": "struct_jon_gui_data_colors_menu",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_colors_menu",
+              "fields": [
+                {
+                  "name": "bg",
+                  "ctype": "struct_jon_gui_data_colors_value",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_jon_gui_data_colors_value",
+                    "fields": [
+                      {
+                        "name": "h",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "s",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "v",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "a",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "text",
+                  "ctype": "struct_jon_gui_data_colors_value",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_jon_gui_data_colors_value",
+                    "fields": [
+                      {
+                        "name": "h",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "s",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "v",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "a",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "focused",
+                  "ctype": "struct_jon_gui_data_colors_value",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_jon_gui_data_colors_value",
+                    "fields": [
+                      {
+                        "name": "h",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "s",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "v",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "a",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "osd",
+            "ctype": "struct_jon_gui_data_colors_osd",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_colors_osd",
+              "fields": [
+                {
+                  "name": "main",
+                  "ctype": "struct_jon_gui_data_colors_value",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_jon_gui_data_colors_value",
+                    "fields": [
+                      {
+                        "name": "h",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "s",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "v",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "a",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "accent",
+                  "ctype": "struct_jon_gui_data_colors_value",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_jon_gui_data_colors_value",
+                    "fields": [
+                      {
+                        "name": "h",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "s",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "v",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "a",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "faded",
+                  "ctype": "struct_jon_gui_data_colors_value",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_jon_gui_data_colors_value",
+                    "fields": [
+                      {
+                        "name": "h",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "s",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "v",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "a",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "time",
+      "ctype": "struct_jon_gui_data_time",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_time",
+        "fields": [
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_34",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_34",
+              "fields": [
+                {
+                  "name": "timestamp",
+                  "ctype": "int64"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "struct_anon_33",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_anon_33",
+                    "fields": [
+                      {
+                        "name": "timestamp_low",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "timestamp_hi",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_36",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_36",
+              "fields": [
+                {
+                  "name": "manual_timestamp",
+                  "ctype": "int64"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "struct_anon_35",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_anon_35",
+                    "fields": [
+                      {
+                        "name": "manual_timestamp_low",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "manual_timestamp_hi",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "zone_id",
+            "ctype": "int32"
+          },
+          {
+            "name": "use_manual_time",
+            "ctype": "int32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "gps",
+      "ctype": "struct_jon_gui_data_gps",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_gps",
+        "fields": [
+          {
+            "name": "longitude",
+            "ctype": "int32"
+          },
+          {
+            "name": "latitude",
+            "ctype": "int32"
+          },
+          {
+            "name": "height",
+            "ctype": "int32"
+          },
+          {
+            "name": "manual_longitude",
+            "ctype": "int32"
+          },
+          {
+            "name": "manual_latitude",
+            "ctype": "int32"
+          },
+          {
+            "name": "manual_altitude",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_9",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_9",
+              "fields": [
+                {
+                  "name": "timestamp",
+                  "ctype": "int64"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "struct_anon_8",
+                  "details": {
+                    "type": "structure",
+                    "name": "struct_anon_8",
+                    "fields": [
+                      {
+                        "name": "timestamp_low",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "timestamp_hi",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_10",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_10",
+              "fields": [
+                {
+                  "name": "fix_type",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "fix_type_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "use_manual",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_3",
+            "ctype": "union_anon_11",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_11",
+              "fields": [
+                {
+                  "name": "units_idx",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "units_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_4",
+            "ctype": "union_anon_12",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_12",
+              "fields": [
+                {
+                  "name": "device_status",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "device_status_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "lrf",
+      "ctype": "struct_jon_gui_data_lrf",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_lrf",
+        "fields": [
+          {
+            "name": "scanning",
+            "ctype": "int32"
+          },
+          {
+            "name": "measuring",
+            "ctype": "int32"
+          },
+          {
+            "name": "refining",
+            "ctype": "int32"
+          },
+          {
+            "name": "last_range_measured_val_1",
+            "ctype": "int32"
+          },
+          {
+            "name": "last_range_measured_val_2",
+            "ctype": "int32"
+          },
+          {
+            "name": "last_range_measured_val_3",
+            "ctype": "int32"
+          },
+          {
+            "name": "fog_mode_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "scanning_mode_freq",
+            "ctype": "int32"
+          },
+          {
+            "name": "measure_id",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_19",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_19",
+              "fields": [
+                {
+                  "name": "target_designator_status",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "target_designator_status_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "error_bf",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_20",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_20",
+              "fields": [
+                {
+                  "name": "device_status",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "device_status_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "media",
+      "ctype": "struct_jon_gui_data_media",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_media",
+        "fields": [
+          {
+            "name": "space_left_prc",
+            "ctype": "int32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "system",
+      "ctype": "struct_jon_gui_data_system",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_system",
+        "fields": [
+          {
+            "name": "enable_video_recording",
+            "ctype": "int32"
+          },
+          {
+            "name": "recording_is_important",
+            "ctype": "int32"
+          },
+          {
+            "name": "disk_space_percent_taken",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_af_enable",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_ae_enable",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_air_enable",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_af_enable",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_filter_value",
+            "ctype": "int32"
+          },
+          {
+            "name": "irf_enable",
+            "ctype": "int32"
+          },
+          {
+            "name": "is_enable",
+            "ctype": "int32"
+          },
+          {
+            "name": "agc_mode",
+            "ctype": "int32"
+          },
+          {
+            "name": "enable_zoom_sync",
+            "ctype": "int32"
+          },
+          {
+            "name": "eth_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "wifi_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "enable_continuous_zoom",
+            "ctype": "int32"
+          },
+          {
+            "name": "shutdown_timer_running",
+            "ctype": "int32"
+          },
+          {
+            "name": "geodesic_mode_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_25",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_25",
+              "fields": [
+                {
+                  "name": "localization_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "localization_id_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_26",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_26",
+              "fields": [
+                {
+                  "name": "active_video_channel",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "active_video_channel_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_3",
+            "ctype": "union_anon_27",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_27",
+              "fields": [
+                {
+                  "name": "active_thermal_color_filter_idx",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "active_thermal_color_filter_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_4",
+            "ctype": "union_anon_28",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_28",
+              "fields": [
+                {
+                  "name": "active_day_filter_idx",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "active_day_filter_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_5",
+            "ctype": "union_anon_29",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_29",
+              "fields": [
+                {
+                  "name": "acccumulator_stat_idx",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "acccumulator_stat_idx_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_6",
+            "ctype": "union_anon_30",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_30",
+              "fields": [
+                {
+                  "name": "sd_card_stat_idx",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "sd_card_stat_idx_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "cur_video_rec_dir_year",
+            "ctype": "int32"
+          },
+          {
+            "name": "cur_video_rec_dir_month",
+            "ctype": "int32"
+          },
+          {
+            "name": "cur_video_rec_dir_day",
+            "ctype": "int32"
+          },
+          {
+            "name": "cur_video_rec_dir_hour",
+            "ctype": "int32"
+          },
+          {
+            "name": "cur_video_rec_dir_minute",
+            "ctype": "int32"
+          },
+          {
+            "name": "cur_video_rec_dir_second",
+            "ctype": "int32"
+          },
+          {
+            "name": "low_disk_space",
+            "ctype": "int32"
+          },
+          {
+            "name": "no_disk_space",
+            "ctype": "int32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "osd",
+      "ctype": "struct_jon_gui_data_osd",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_osd",
+        "fields": [
+          {
+            "name": "show_on_recording",
+            "ctype": "int32"
+          },
+          {
+            "name": "crosshair_index",
+            "ctype": "int32"
+          },
+          {
+            "name": "crosshair_size_indx",
+            "ctype": "int32"
+          },
+          {
+            "name": "faded_opa",
+            "ctype": "int32"
+          },
+          {
+            "name": "fade_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "show_photo_indicator",
+            "ctype": "int32"
+          },
+          {
+            "name": "disable_heat_osd",
+            "ctype": "int32"
+          },
+          {
+            "name": "disable_day_osd",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_21",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_21",
+              "fields": [
+                {
+                  "name": "pip_pos_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pip_pos_id_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "targets",
+      "ctype": "struct_jon_gui_data_targets",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_targets",
+        "fields": [
+          {
+            "name": "last_target",
+            "ctype": "struct_jon_gui_data_target_spec",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_target_spec",
+              "fields": [
+                {
+                  "name": "target_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "target_index",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "uuid",
+                  "ctype": "int32[4]",
+                  "array_length": 4
+                },
+                {
+                  "name": "target_longitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "target_latitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "target_height",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_31",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_31",
+                    "fields": [
+                      {
+                        "name": "observer_timestamp",
+                        "ctype": "int64"
+                      },
+                      {
+                        "name": "observer_timestamp_packed",
+                        "ctype": "int64"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "observer_longitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_latitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_azimuth",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_elevation",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_altitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "distance_a",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "distance_b",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "has_range",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "session_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_2",
+                  "ctype": "union_anon_32",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_32",
+                    "fields": [
+                      {
+                        "name": "observer_fix_type",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "observer_fix_type_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "target_viewr_current_target",
+            "ctype": "struct_jon_gui_data_target_spec",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_target_spec",
+              "fields": [
+                {
+                  "name": "target_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "target_index",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "uuid",
+                  "ctype": "int32[4]",
+                  "array_length": 4
+                },
+                {
+                  "name": "target_longitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "target_latitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "target_height",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_31",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_31",
+                    "fields": [
+                      {
+                        "name": "observer_timestamp",
+                        "ctype": "int64"
+                      },
+                      {
+                        "name": "observer_timestamp_packed",
+                        "ctype": "int64"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "observer_longitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_latitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_azimuth",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_elevation",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "observer_altitude",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "distance_a",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "distance_b",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "has_range",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "session_id",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_2",
+                  "ctype": "union_anon_32",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_32",
+                    "fields": [
+                      {
+                        "name": "observer_fix_type",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "observer_fix_type_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "recorded_targets_count",
+            "ctype": "int32"
+          },
+          {
+            "name": "screenshot_state",
+            "ctype": "int32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "camera_alignment",
+      "ctype": "struct_jon_gui_data_camera_alignment",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_camera_alignment",
+        "fields": [
+          {
+            "name": "table_row",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_focus_target_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_focus_target_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_zoom_target_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_zoom_target_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_cross_hair_offset_ver",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_cross_hair_offset_ver",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_cross_hair_offset_hor",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_cross_hair_offset_hor",
+            "ctype": "int32"
+          },
+          {
+            "name": "used",
+            "ctype": "int32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "meteo",
+      "ctype": "struct_jon_gui_data_meteo",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_meteo",
+        "fields": [
+          {
+            "name": "internal_temperature",
+            "ctype": "int32"
+          },
+          {
+            "name": "internal_humidity",
+            "ctype": "int32"
+          },
+          {
+            "name": "internal_pressure",
+            "ctype": "int32"
+          },
+          {
+            "name": "external_temperature",
+            "ctype": "int32"
+          },
+          {
+            "name": "external_humidity",
+            "ctype": "int32"
+          },
+          {
+            "name": "external_pressure",
+            "ctype": "int32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "lens",
+      "ctype": "struct_jon_gui_data_lens",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_lens",
+        "fields": [
+          {
+            "name": "day_focus_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_focus_pos_min",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_focus_pos_max",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_zoom_table_index",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_zoom_table_max_index",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_zoom_table_index",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_zoom_table_max_index",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_focus_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_zoom_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_glass_temperature",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_glass_heater_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "day_glass_heater_meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "heat_meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "day_zoom_pos_min",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_zoom_pos_max",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_zoom_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_zoom_x",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_zoom_x",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_iris_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_crop_top",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_crop_bottom",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_crop_left",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_crop_right",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_iris_pos",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_crop_top",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_crop_bottom",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_crop_left",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_crop_right",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_dde_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_dde_level",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_dde_max_level",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_digital_zoom_level",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_digital_zoom_level",
+            "ctype": "int32"
+          },
+          {
+            "name": "day_clahe_level",
+            "ctype": "int32"
+          },
+          {
+            "name": "heat_clahe_level",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_15",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_15",
+              "fields": [
+                {
+                  "name": "device_status_day",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "device_status_day_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_16",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_16",
+              "fields": [
+                {
+                  "name": "device_status_heat",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "device_status_heat_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_3",
+            "ctype": "union_anon_17",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_17",
+              "fields": [
+                {
+                  "name": "fx_mode_day",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "fx_mode_day_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_4",
+            "ctype": "union_anon_18",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_18",
+              "fields": [
+                {
+                  "name": "fx_mode_heat",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "fx_mode_heat_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "rotary",
+      "ctype": "struct_jon_gui_data_rotary",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_rotary",
+        "fields": [
+          {
+            "name": "platform_azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "platform_elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "platform_bank",
+            "ctype": "int32"
+          },
+          {
+            "name": "use_platform_positioning",
+            "ctype": "int32"
+          },
+          {
+            "name": "head_azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "head_elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "head_bank",
+            "ctype": "int32"
+          },
+          {
+            "name": "speed_azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "speed_elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "speed_bank",
+            "ctype": "int32"
+          },
+          {
+            "name": "set_azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "set_elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "set_speed_azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "set_speed_elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "set_azimuth_dir",
+            "ctype": "int32"
+          },
+          {
+            "name": "set_elevation_dir",
+            "ctype": "int32"
+          },
+          {
+            "name": "set_azimuth_offset",
+            "ctype": "int32"
+          },
+          {
+            "name": "is_scanning",
+            "ctype": "int32"
+          },
+          {
+            "name": "is_scanning_paused",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_target",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_target_max",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_cur_target_azimuth",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_cur_target_elevation",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_cur_target_day_zoom_table_index",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_cur_target_heat_zoom_table_index",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_cur_target_linger",
+            "ctype": "int32"
+          },
+          {
+            "name": "scan_cur_target_speed",
+            "ctype": "int32"
+          },
+          {
+            "name": "unnamed_1",
+            "ctype": "union_anon_22",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_22",
+              "fields": [
+                {
+                  "name": "device_status",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "device_status_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "unnamed_2",
+            "ctype": "union_anon_23",
+            "details": {
+              "type": "structure",
+              "name": "union_anon_23",
+              "fields": [
+                {
+                  "name": "mode",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "mode_packed",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          },
+          {
+            "name": "rotary_init",
+            "ctype": "int32"
+          },
+          {
+            "name": "pan_init",
+            "ctype": "int32"
+          },
+          {
+            "name": "tilt_init",
+            "ctype": "int32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "power",
+      "ctype": "struct_jon_gui_data_power",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_power",
+        "fields": [
+          {
+            "name": "s0",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "s1",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "s2",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "s3",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "s4",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "s5",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "s6",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "s7",
+            "ctype": "struct_jon_gui_data_power_module_state",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_power_module_state",
+              "fields": [
+                {
+                  "name": "voltage",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "current",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "power",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_alarm",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_cmd_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "can_data_address",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "is_power_on",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "unnamed_1",
+                  "ctype": "union_anon_24",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_anon_24",
+                    "fields": [
+                      {
+                        "name": "can_device",
+                        "ctype": "int32"
+                      },
+                      {
+                        "name": "can_device_packed",
+                        "ctype": "int32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "meteo",
+            "ctype": "struct_jon_gui_data_component_meteo",
+            "details": {
+              "type": "structure",
+              "name": "struct_jon_gui_data_component_meteo",
+              "fields": [
+                {
+                  "name": "temperature",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "humidity",
+                  "ctype": "int32"
+                },
+                {
+                  "name": "pressure",
+                  "ctype": "int32"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "cv",
+      "ctype": "struct_jon_gui_data_cv",
+      "details": {
+        "type": "structure",
+        "name": "struct_jon_gui_data_cv",
+        "fields": [
+          {
+            "name": "af_day_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "af_heat_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "tracking_day",
+            "ctype": "int32"
+          },
+          {
+            "name": "tracking_heat",
+            "ctype": "int32"
+          },
+          {
+            "name": "vampire_mode_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "stabilization_mode_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "recognition_mode_enabled",
+            "ctype": "int32"
+          },
+          {
+            "name": "dumping",
+            "ctype": "int32"
+          },
+          {
+            "name": "tracking_data_day",
+            "ctype": "struct_jon_gui_tracking_quad[10]",
+            "array_length": 10,
+            "element_details": {
+              "type": "structure",
+              "name": "struct_jon_gui_tracking_quad",
+              "fields": [
+                {
+                  "name": "p1",
+                  "ctype": "union_jon_gui_tracking_point",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_jon_gui_tracking_point",
+                    "fields": [
+                      {
+                        "name": "fields",
+                        "ctype": "struct_anon_38",
+                        "details": {
+                          "type": "structure",
+                          "name": "struct_anon_38",
+                          "fields": [
+                            {
+                              "name": "x",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "y",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "color_index",
+                              "ctype": "uint32"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "packed",
+                        "ctype": "uint32"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "p2",
+                  "ctype": "union_jon_gui_tracking_point",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_jon_gui_tracking_point",
+                    "fields": [
+                      {
+                        "name": "fields",
+                        "ctype": "struct_anon_38",
+                        "details": {
+                          "type": "structure",
+                          "name": "struct_anon_38",
+                          "fields": [
+                            {
+                              "name": "x",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "y",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "color_index",
+                              "ctype": "uint32"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "packed",
+                        "ctype": "uint32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "tracking_data_heat",
+            "ctype": "struct_jon_gui_tracking_quad[10]",
+            "array_length": 10,
+            "element_details": {
+              "type": "structure",
+              "name": "struct_jon_gui_tracking_quad",
+              "fields": [
+                {
+                  "name": "p1",
+                  "ctype": "union_jon_gui_tracking_point",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_jon_gui_tracking_point",
+                    "fields": [
+                      {
+                        "name": "fields",
+                        "ctype": "struct_anon_38",
+                        "details": {
+                          "type": "structure",
+                          "name": "struct_anon_38",
+                          "fields": [
+                            {
+                              "name": "x",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "y",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "color_index",
+                              "ctype": "uint32"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "packed",
+                        "ctype": "uint32"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "p2",
+                  "ctype": "union_jon_gui_tracking_point",
+                  "details": {
+                    "type": "structure",
+                    "name": "union_jon_gui_tracking_point",
+                    "fields": [
+                      {
+                        "name": "fields",
+                        "ctype": "struct_anon_38",
+                        "details": {
+                          "type": "structure",
+                          "name": "struct_anon_38",
+                          "fields": [
+                            {
+                              "name": "x",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "y",
+                              "ctype": "uint32"
+                            },
+                            {
+                              "name": "color_index",
+                              "ctype": "uint32"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "name": "packed",
+                        "ctype": "uint32"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "debug",
+      "ctype": "struct_anon_41",
+      "details": {
+        "type": "structure",
+        "name": "struct_anon_41",
+        "fields": [
+          {
+            "name": "values",
+            "ctype": "int32[20]",
+            "array_length": 20
+          },
+          {
+            "name": "display_debug",
+            "ctype": "int32"
+          }
+        ]
+      }
+    }
+  ]
+}
