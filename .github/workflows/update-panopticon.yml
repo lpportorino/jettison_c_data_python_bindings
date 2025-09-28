@@ -90,10 +90,16 @@ jobs:
         run: |
           cd panopticon
 
-          # Initialize and update the c_data_python_bindings submodule to our latest commit
+          # Initialize the submodule
           git submodule init c_data_python_bindings
 
-          # Update to the specific commit (including any doc updates we just made)
+          # Update submodule with SSH URL for proper authentication
+          git config submodule.c_data_python_bindings.url git@github.com:lpportorino/jettison_c_data_python_bindings.git
+
+          # Fetch and checkout the latest commit from the submodule repository
+          git submodule update --remote c_data_python_bindings
+
+          # Now update to our specific commit
           cd c_data_python_bindings
           git fetch origin
           git checkout ${{ env.NEW_COMMIT }}
