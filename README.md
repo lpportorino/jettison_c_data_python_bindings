@@ -27,3 +27,12 @@ state = jon_gui_state()
 - Build Architecture: ARM64 (via QEMU emulation)
 - Commit: 9cf3074664b1aea10a92be937f00d8a95e4c4999
 - Branch: master
+
+## Deployment
+
+This repository is automatically integrated with [jettison_panopticon](https://github.com/lpportorino/jettison_panopticon):
+
+- **Automatic Updates**: When changes are pushed to this repository, a GitHub Action automatically updates the panopticon repository's submodule reference
+- **Deployment Key**: Uses the `PUSH_TO_PANOPTICON` deployment key for secure repository access
+- **Continuous Integration**: Updates to this repository trigger a rebuild of the panopticon project
+- **Workflow**: See `.github/workflows/update-panopticon.yml` for the automated update process

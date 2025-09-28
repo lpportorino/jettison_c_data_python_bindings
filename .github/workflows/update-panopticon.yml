@@ -1,0 +1,65 @@
+name: Update Panopticon Submodule
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  update-panopticon:
+    name: Update Panopticon Submodule Reference
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup SSH for deployment key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PUSH_TO_PANOPTICON }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          cat >>~/.ssh/config <<EOF
+          Host github.com
+              HostName github.com
+              User git
+              IdentityFile ~/.ssh/deploy_key
+              StrictHostKeyChecking no
+          EOF
+
+      - name: Clone Panopticon repository
+        run: |
+          git clone git@github.com:lpportorino/jettison_panopticon.git panopticon
+          cd panopticon
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+      - name: Update submodule to latest
+        run: |
+          cd panopticon
+
+          # Initialize and update the c_data_python_bindings submodule
+          git submodule init c_data_python_bindings
+          git submodule update --remote c_data_python_bindings
+
+          # Check if there are any changes
+          if git diff --quiet c_data_python_bindings; then
+            echo "Submodule is already up to date"
+            exit 0
+          fi
+
+          # Stage the submodule update
+          git add c_data_python_bindings
+
+          # Get the new commit hash for the commit message
+          cd c_data_python_bindings
+          NEW_COMMIT=$(git rev-parse HEAD)
+          cd ..
+
+          # Commit with descriptive message
+          git commit -m "Update Python bindings from ${NEW_COMMIT:0:8}" \
+                     -m "Auto-updated by jettison_c_data_python_bindings CI" \
+                     -m "This update includes the latest Python bindings changes."
+
+      - name: Push changes to Panopticon
+        run: |
+          cd panopticon
+          # Push the update without [skip ci] so Panopticon rebuilds
+          git push origin main || git push origin master
